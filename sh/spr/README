@@ -1,0 +1,13 @@
+V00.03.00 SPR Tracking System
+-----------------------------
+Indivdual SPR Counters for
+each release
+-----------------------------
+EditSpr
+FixSpr
+GetSprNum
+ListSprs
+PromoteSpr
+RaiseSpr
+ShowSpr
+SignOffSpr

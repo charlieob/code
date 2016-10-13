@@ -1,0 +1,13 @@
+from HTMLParser import HTMLParser
+from urllib2 import urlopen
+
+class Spider(HTMLParser):
+      def __init__(self, url):
+            HTMLParser.__init__(self)
+            req = urlopen(url)
+            self.feed(req.read())
+
+      def handle_starttag(self, tag, attrs):
+            if tag == 'a' and attrs:
+                  print "Found link => %s" % attrs[0][1]
+Spider('http://www.hellboundhackers.org')

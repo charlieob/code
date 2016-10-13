@@ -1,0 +1,3 @@
+#!/bin/csh -xf
+gcc -lsocket -lnsl -o tcpsend tcpsend.c
+gcc -lsocket -lnsl -o tcprecv tcprecv.c

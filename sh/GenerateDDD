@@ -1,0 +1,137 @@
+#! /bin/csh -f
+#
+#      Author:  Charlie O'Brien
+#        Date:  January 5, 1995
+# Description:  Invokes ADI (badi) to generate the following
+#		pagegroups of a PHASE detailed design document:
+#			190
+#			192
+#			193
+#			194
+#
+
+setenv PATH "/cadre/tool_kit:/usr/local/bin:/bin"
+
+set com=$0
+set prog=$com:t
+
+set configfile = /cadre/tsa/config_file.sdh
+set outfile = /tmp/adi_$$
+set options = /proj/sdh/users/phase_sw/project/work/utils/ADI/DOM.config
+
+set option_d=false
+set option_h=false
+set option_m=false
+set option_n=false
+set arg_d
+set arg_m
+set arg_n
+
+while ($#argv > 0)
+	switch ($1)
+	case -d:
+		set option_d=true
+		if ($#argv > 1) then
+			shift
+			set arg_d=$1
+		else
+			echo "${prog}: missing argument for option $1"
+			goto usage
+		endif
+	breaksw
+	case -h:
+		set option_h=true
+	breaksw
+	case -m:
+		set option_m=true
+		if ($#argv > 1) then
+			shift
+			set arg_m=$1
+		else
+			echo "${prog}: missing argument for option $1"
+			goto usage
+		endif
+	breaksw
+	case -n:
+		set option_n=true
+		if ($#argv > 1) then
+			shift
+			set arg_n=$1
+		else
+			echo "${prog}: missing argument for option $1"
+			goto usage
+		endif
+	breaksw
+	case -?:
+		echo "${prog}: unknown option $1"
+		set option_h=true
+	breaksw
+	default:
+		if (${?args}) then
+			set args="$args $1"
+		else
+			set args=$1
+		endif
+	breaksw
+	endsw
+	shift
+end
+
+if ($option_h == true) goto usage
+
+if ($option_d == false || $option_m == false || $option_n == false) then
+	echo "${prog}: missing mandatory argument"
+	goto usage
+endif
+
+set docdir = $arg_d
+set model = $arg_m
+set docnum = $arg_n
+
+set docfile = $docdir/s${docnum}19000.doc
+badi -c $configfile -e Execute -m $model -o Generate_190_Analysis -t SC -v -F $outfile -O $options -R -S 2
+fmbatch <<EndFM
+Open $outfile
+Open $docfile
+UseFormatsFrom $outfile $docfile
+SaveAs d $outfile $docfile
+Quit
+EndFM
+
+set docfile = $docdir/s${docnum}19200.doc
+badi -c $configfile -e Execute -m $model -o Generate_192_Data_Dictionary -t SC -v -F $outfile -O $options -R -S 2
+fmbatch <<EndFM
+Open $outfile
+Open $docfile
+UseFormatsFrom $outfile $docfile
+SaveAs d $outfile $docfile
+Quit
+EndFM
+
+set docfile = $docdir/s${docnum}19300.doc
+badi -c $configfile -e Execute -m $model -o Generate_193_Detail_Design -t SC -v -F $outfile -O $options -R -S 2
+fmbatch <<EndFM
+Open $outfile
+Open $docfile
+UseFormatsFrom $outfile $docfile
+SaveAs d $outfile $docfile
+Quit
+EndFM
+
+set docfile = $docdir/s${docnum}19400.doc
+badi -c $configfile -e Execute -m $model -o Generate_194_Message_Catalogue -t SC -v -F $outfile -O $options -R -S 2
+fmbatch <<EndFM
+Open $outfile
+Open $docfile
+UseFormatsFrom $outfile $docfile
+SaveAs d $outfile $docfile
+Quit
+EndFM
+
+/bin/rm $outfile*
+
+exit 0
+
+usage:
+echo "Usage: ${prog} -d <document directory> -m <model> -n <4-digit 12nc number> [-h]"
+exit 0

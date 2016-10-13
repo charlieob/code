@@ -1,0 +1,1 @@
+gcc -g -DTESTMAIN -o testconv convert.c

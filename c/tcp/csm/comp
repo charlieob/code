@@ -1,0 +1,2 @@
+#!/bin/csh -xf
+gcc -lsocket -lnsl -o csm csm.c

@@ -1,0 +1,37 @@
+#!/bin/sh
+#
+#      Author:  Charlie O'Brien
+#        Date:  March 9, 1993
+# Description:  Lists the most recently saved sccs versions
+#		of each file in the SCCS directory.
+#		The output is in a format suitable for pasting
+#		into a release script.
+#
+
+PATH="/usr/ucb:/bin:/usr/bin:/usr/ccs/bin"
+USAGE="Usage: `basename $0` [-h]"
+OPTION_H=false
+ARGS=
+
+while [ $# -gt 0 ]
+do      case $1 in
+        -h)     OPTION_H=true; shift
+                ;;
+        -*)     echo "`basename $0`: unknown option $1"
+                echo $USAGE; exit
+                ;;
+        *)      ARGS="$ARGS $1"; shift
+                ;;
+        esac
+done
+
+if $OPTION_H
+then    echo $USAGE; exit
+fi
+
+sccs prt -y SCCS | grep -v '^$' | awk '{print $1, $3}' | \
+	sed -e 's/: / /' -e 's/SCCS\/s\.//' | \
+	grep -v '^Release' | sort | \
+	awk '{printf "sccs get -r%s %s\n", $2, $1}'
+
+exit

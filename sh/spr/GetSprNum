@@ -1,0 +1,6 @@
+#!/bin/sh
+
+umask 002
+NUMBER=`cat $1 | nawk '{s=$1;s++;printf"%05d", s}'`;
+echo $NUMBER >$1
+echo $NUMBER

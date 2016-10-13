@@ -1,0 +1,18 @@
+#! /bin/sh
+#
+# File:		diff_dir
+# Author:	Charlie O'Brien
+# Date:		December 9, 1992
+#
+# Description:	This script compares two directories by performing a 'diff'
+#		operation on all files which appear in both, ignoring all
+#		files which are directories, executables, links, etc.
+#		It also warns of files appearing in one directory and not
+#		in the other.
+#
+# Usage:	diff_dir <directory1> <directory2>
+#
+((cd $1; ls -F | grep -v '[/*@=%]$'); (cd $2; ls -F | grep -v '[/*@=%]$')) \
+| sort | uniq |
+awk '{print "echo Checking " $1 "\ndiff " dir1 "/" $1 " " dir2 "/" $1 }' \
+dir1=$1 dir2=$2 | /bin/sh

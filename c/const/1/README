@@ -1,0 +1,19 @@
+January 7th, 1992:
+
+This code crashes when compiled without the -Xc option to acc.
+
+#include <stdio.h>
+
+unsigned char f (const unsigned char n)
+{
+        return n+1;
+}
+
+main ()
+{
+        unsigned char a,b;
+        a = 10;
+        b = f(a);
+        printf ("answer=%d\n", b);
+}
+

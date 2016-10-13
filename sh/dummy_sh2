@@ -1,0 +1,52 @@
+#!/bin/sh
+#
+
+PATH="/usr/ucb:/bin:/usr/bin:"
+USAGE="Usage: `basename $0` [-a] [-b arg] [arg ...]"
+OPTION_A=false
+OPTION_B=false
+OPTION_H=false
+ARGS=
+
+while [ $# -gt 0 ]
+do	case $1 in
+	-a)	OPTION_A=true; shift
+		;;
+	-b)	OPTION_B=true; shift
+		if [ $# -ne 0 ]
+		then	ARG_B=$1; shift
+		else	echo "`basename $0`: option -b requires an argument"
+			echo $USAGE; exit
+		fi
+		;;
+	-h)	OPTION_H=true; shift
+		;;
+	-*)	echo "`basename $0`: unknown option $1"
+		echo $USAGE; exit
+		;;
+	*)	ARGS="$ARGS $1"; shift
+		;;
+	esac
+done
+
+if $OPTION_H
+then	echo $USAGE; exit
+fi
+
+if $OPTION_A
+then	echo "option -a"
+fi
+
+if $OPTION_B
+then	echo "option -b (argument $ARG_B)"
+fi
+
+if [ ! "$ARGS" ]
+then	read ARGS
+fi
+
+for i in $ARGS
+do	echo "processing $i"
+done
+
+exit

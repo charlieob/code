@@ -1,0 +1,112 @@
+#!/bin/sh
+
+REL_PATH=$PHASE_ROOT/project/work/doc/qc/sp
+SCCS_PATH=../../../../sccs/doc/qc/sp
+WORK_PATH=../../../../work/doc/qc/sp
+TODO_DIR=todo
+FIXED_DIR=fixed
+SIGNEDOFF_DIR=signedoff
+PHASE_LIB=phase_lib
+
+echo 
+echo -----------------------------------
+echo PHASE SPR Tracking System V00.03.00
+echo RaiseSpr
+echo -----------------------------------
+echo 
+
+umask 002
+if test $1
+then
+        REL_NAME=$1
+else
+        echo  "Usage: RaiseSpr <VERSION>" 
+        exit 1
+fi
+
+# Generate the name of the SPR Counter File
+SPR_COUNTER=$REL_PATH/SprCounter.$REL_NAME
+
+# check if the release directory exists
+# if not, ask if want to create
+if test -d $REL_PATH/$REL_NAME
+then
+   echo Creating New SPR...
+else
+   echo SPR tree for release  $REL_NAME does not exist.
+   echo -n "Do you wish to create a new SPR tree (Y/N): "; read Y_N
+   y_n=`echo $Y_N | tr A-Z a-z | awk '{printf("%s",substr($1,1,1))}' `
+   if test $y_n = "y"
+   then
+      echo Creating Tree...
+      echo "00000" >$SPR_COUNTER
+      mkdir $REL_PATH/$REL_NAME
+      mkdir $REL_PATH/$SCCS_PATH/$REL_NAME
+      mkdir $REL_PATH/$REL_NAME/$TODO_DIR
+      mkdir $REL_PATH/$SCCS_PATH/$REL_NAME/$PHASE_LIB
+      mkdir $REL_PATH/$REL_NAME/$FIXED_DIR
+      mkdir $REL_PATH/$REL_NAME/$SIGNEDOFF_DIR
+      ln -s ../../$SCCS_PATH/$REL_NAME/$PHASE_LIB $REL_PATH/$REL_NAME/$TODO_DIR/SCCS
+      ln -s ../../$WORK_PATH/$REL_NAME/$TODO_DIR $REL_PATH/$SCCS_PATH/$REL_NAME/$PHASE_LIB/WORK
+      ln -s ../../$SCCS_PATH/$REL_NAME/$PHASE_LIB $REL_PATH/$REL_NAME/$FIXED_DIR/SCCS
+      ln -s ../../$SCCS_PATH/$REL_NAME/$PHASE_LIB $REL_PATH/$REL_NAME/$SIGNEDOFF_DIR/SCCS
+   else
+      echo "Exiting RaiseSpr";
+      exit 1;
+   fi
+fi
+
+
+# find out the spr number here
+SPR_NUM=`$PHASE_ROOT/project/work/utils/spr/GetSprNum $SPR_COUNTER`;
+
+# change to todo directory
+cd $REL_PATH/$REL_NAME/$TODO_DIR/
+
+# create the file
+SPR_FILE=`echo -n "PHASE_"; echo -n $SPR_NUM`
+echo "------------------------------------------------------------------------------"  >> $SPR_FILE
+echo ""                                                                                >> $SPR_FILE
+echo -n "SPR Number          : "                                                       >> $SPR_FILE
+  echo -n $REL_NAME                                                                    >> $SPR_FILE
+  echo -n " - "                                                                        >> $SPR_FILE
+  echo $SPR_NUM                                                                        >> $SPR_FILE
+echo ""                                                                                >> $SPR_FILE
+echo "PHASE SubSystem     : "                                                      >> $SPR_FILE
+echo ""                                                                                >> $SPR_FILE
+echo -n "Date                : "                                                       >> $SPR_FILE
+date '+%d/%m/%y : %H:%M' >> $SPR_FILE
+echo ""                                                                                >> $SPR_FILE
+echo "Test Identifier     : "                                                       >> $SPR_FILE
+echo ""                                                                                >> $SPR_FILE
+echo "Problem Category    : "                                                       >> $SPR_FILE
+echo ""                                                                                >> $SPR_FILE
+echo "Tester              : "                                                       >> $SPR_FILE
+echo ""                                                                                >> $SPR_FILE
+echo "Problem Description : "                                                      >> $SPR_FILE
+echo ""	                                                                               >> $SPR_FILE
+echo ""	                                                                               >> $SPR_FILE
+echo ""	                                                                               >> $SPR_FILE
+echo "------------------------------------------------------------------------------"  >> $SPR_FILE
+echo "                                " >> $SPR_FILE
+echo "Reviewer's Name:                " >> $SPR_FILE
+echo "                                " >> $SPR_FILE                                
+echo "Estimation of Work Involved :   " >> $SPR_FILE
+echo "                                " >> $SPR_FILE                              
+echo "Comments :                      " >> $SPR_FILE
+echo "                                " >> $SPR_FILE
+      # edit the file         
+textedit $SPR_FILE
+
+# Put SPR in SCCS
+sccs create -r1 $SPR_FILE
+
+# Cleanup
+if test -f $SPR_FILE%
+then
+   rm $SPR_FILE%
+fi
+
+echo "~c `whoami`" | cat - $SPR_FILE | mail -s "$REL_NAME $SPR_FILE" s3phase
+
+rm ,$SPR_FILE

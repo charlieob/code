@@ -1,0 +1,3 @@
+gcc -g -DTESTMAIN -o float float.c
+gcc -g -lm -o ieee ieee.c
+gcc -g -lm -o referencetest referencetest.c

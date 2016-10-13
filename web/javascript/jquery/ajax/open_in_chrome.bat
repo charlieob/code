@@ -1,0 +1,1 @@
+C:\Users\charlie\AppData\Local\Google\Chrome\Application\chrome.exe --allow-file-access-from-files file:///C:/Users/charlie/Documents/programming/web/ajax/example.html

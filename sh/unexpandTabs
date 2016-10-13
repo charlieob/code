@@ -1,0 +1,4 @@
+#! /bin/sh
+for i in $*
+do	cp $i $i.old; unexpand -a $i.old > $i
+done

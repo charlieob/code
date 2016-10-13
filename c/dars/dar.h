@@ -1,0 +1,2 @@
+void setProtectedData();
+int getProtectedData();

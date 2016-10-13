@@ -1,0 +1,36 @@
+#!/bin/sh
+#
+
+PATH="/usr/ucb:/bin:/usr/bin:"
+USAGE="Usage: `basename $0` [-ah] [-b arg] arg ..."
+OPTION_A=false
+OPTION_B=false
+OPTION_H=false
+
+while getopts ab:h opt
+do	case $opt in
+	a)	OPTION_A=true;;
+	b)	OPTION_B=true; ARG_B=$OPTARG;;
+	h)	OPTION_H=true;;
+	\?)	echo $USAGE; exit;;
+	esac
+done
+shift `expr $OPTIND - 1`
+
+if $OPTION_H
+then	echo $USAGE; exit
+fi
+
+if $OPTION_A
+then	echo "option -a"
+fi
+
+if $OPTION_B
+then	echo "option -b (argument $ARG_B)"
+fi
+
+for i in $*
+do	echo "processing $i"
+done
+
+exit

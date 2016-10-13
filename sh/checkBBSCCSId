@@ -1,0 +1,86 @@
+#!/bin/csh -f
+#
+#      Author:  Charlie O'Brien
+#        Date:  November 24, 1994
+# Description:  Checks each element of a BB for the presence
+#		of a valid sccs id.
+#
+
+setenv PATH "/usr/bin:/usr/ucb"
+
+set com = $0
+set prog = $com:t
+set usage = "Usage: $prog [-h] <BB name>"
+
+set option_h = false
+
+set args = ()
+while ($#argv > 0)
+   switch ($1)
+   case -h:
+      set option_h = true
+      breaksw
+   case -?:
+      echo "${prog}: unknown option $1"
+      set option_h = true
+      breaksw
+   default:
+      set args = ($args $1)
+      breaksw
+   endsw
+   shift
+end
+
+if ($option_h == true) goto usage
+
+if ($#args != 1) goto usage
+
+set bb = $args[1]
+cd $LBSWE_BBLIB_DIR
+
+if (! -d $bb) then
+   echo "BB $bb not found"
+   exit 1
+endif
+
+cd $bb
+
+if (! -d Work) then
+   echo "No Work directory for $bb"
+   exit 1
+endif
+
+cd Work
+
+set dirs = ()
+foreach dir (`ls`)
+   if (-d $dir && ($dir != SCCS) && -d $dir/SCCS) then
+      set dirs = ($dirs $dir)
+   endif
+end
+
+set badfiles = ()
+foreach dir ($dirs)
+   pushd $dir > /dev/null
+   set files = `ls SCCS | grep '^s\.' | sed 's/^s\.//'`
+   foreach file ($files)
+      set hh = "`sccs get -k -p $file |& fgrep '%M% %I% %E%'`"
+      if ("$hh" == "") set badfiles = ($badfiles $dir/$file)
+   end
+   popd > /dev/null
+end
+
+if ("$badfiles" != "") then
+   echo "The following files in BB $bb have no valid sccs id:"
+   foreach file ($badfiles)
+      echo "   $file"
+   end
+else
+   echo "BB $bb ok"
+endif
+
+exit 0
+
+usage:
+echo "$usage"
+exit 0

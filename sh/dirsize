@@ -1,0 +1,13 @@
+#! /bin/sh
+#
+# File:		dirsize
+# Author:	Charlie O'Brien
+# Date:		November 27, 2002
+#
+# Description:	This script shows the size in kbytes of all files in a
+#		directory and shows the total size. Files/directories with
+#		names starting with '.' are not counted.
+#
+# Usage:	dirsize
+#
+/bin/du -krs * | awk '{print; s += $1} END {print "total is", s, "kbytes (1024 byte units)"}'

@@ -1,0 +1,56 @@
+#!/bin/sh
+#
+#      Author:	Charlie O'Brien
+#        Date:	December 15, 1992
+# Description:	Script for running one or more test procedures <test>.
+#		Files which must be available in the working
+#		directory are:
+#		(a) <test>.in
+#			containing a sequence of XE monitor commands
+#			which control the test procedure
+#		(b) <test>.exp
+#			containing the expected output
+#
+
+PATH="/usr/ucb:/bin:/usr/bin:/usr/openwin/bin:"
+USAGE="Usage: `basename $0` [-h] test ..."
+OPTION_H=false
+ARGS=
+
+while [ $# -gt 0 ]
+do	case $1 in
+	-h)	OPTION_H=true; shift
+		;;
+	-*)	echo "`basename $0`: unknown option $1"
+		echo $USAGE; exit
+		;;
+	*)	ARGS="$ARGS $1"; shift
+		;;
+	esac
+done
+
+if $OPTION_H
+then	echo $USAGE; exit
+fi
+
+if [ ! "$ARGS" ]
+then	read ARGS
+fi
+
+for i in $ARGS
+do	if [ -f $i.in ]
+	then	echo "Starting test: $i ..."
+		./xe_sched $i.in >$i.out
+		if [ -f $i.exp ]
+		then	if cmp -s $i.exp $i.out
+			then	echo "Test passed."
+				rm $i.out
+			else	echo "************** Test failed **************"
+			fi
+		else	echo "`basename $0`: $i.exp not found"
+		fi
+	else	echo "`basename $0`: $i.in not found"
+	fi
+done
+
+exit

@@ -1,0 +1,114 @@
+#!/bin/sh
+
+REL_PATH=$PHASE_ROOT/project/work/doc/qc/sp
+SCCS_PATH=../../../../sccs/doc/qc/sp
+WORK_PATH=../../../../work/doc/qc/sp
+TODO_DIR=todo
+FIXED_DIR=fixed
+SIGNEDOFF_DIR=signedoff
+PHASE_LIB=phase_lib
+
+echo 
+echo -----------------------------------
+echo PHASE SPR Tracking System V00.03.00
+echo PromoteSpr
+echo -----------------------------------
+echo 
+
+umask 002
+if test $2
+then
+      FROM_REL_NAME=$1
+      TO_REL_NAME=$2
+else
+      echo "Usage: PromoteSpr <FROM_VERSION> <TO_VERSION>"
+      exit 1
+fi
+
+# check if the 'from' release directory exists
+if test -d $REL_PATH/$FROM_REL_NAME
+then
+        echo -n ""   # do nothing 
+else
+        echo SPR 'from' tree $FROM_REL_NAME for promotion does not exist.
+        echo "Exiting PromoteSpr";
+        exit 1;
+fi
+
+# Generate the name of the SPR Counter File
+SPR_COUNTER=$REL_PATH/SprCounter.$TO_REL_NAME
+
+
+# check if the 'to' release directory exists
+if test -d $REL_PATH/$TO_REL_NAME
+then  
+   echo -n ""   # do nothing 
+else 
+   echo SPR tree for release  $REL_NAME does not exist.
+   echo -n "Do you wish to create a new SPR tree (Y/N): "; read Y_N
+   y_n=`echo $Y_N | tr A-Z a-z | awk '{printf("%s",substr($1,1,1))}' `
+   if test $y_n = "y"
+   then
+      echo Creating Tree...
+      echo "00000" >$SPR_COUNTER
+      mkdir $REL_PATH/$TO_REL_NAME
+      mkdir $REL_PATH/$SCCS_PATH/$TO_REL_NAME
+      mkdir $REL_PATH/$TO_REL_NAME/$TODO_DIR
+      mkdir $REL_PATH/$SCCS_PATH/$TO_REL_NAME/$PHASE_LIB
+      mkdir $REL_PATH/$TO_REL_NAME/$FIXED_DIR
+      mkdir $REL_PATH/$TO_REL_NAME/$SIGNEDOFF_DIR
+      ln -s ../../$SCCS_PATH/$TO_REL_NAME/$PHASE_LIB $REL_PATH/$TO_REL_NAME/$TODO_DIR/SCCS
+      ln -s ../../$WORK_PATH/$TO_REL_NAME/$TODO_DIR $REL_PATH/$SCCS_PATH/$TO_REL_NAME/$PHASE_LIB/WORK
+      ln -s ../../$SCCS_PATH/$TO_REL_NAME/$PHASE_LIB $REL_PATH/$TO_REL_NAME/$FIXED_DIR/SCCS
+      ln -s ../../$SCCS_PATH/$TO_REL_NAME/$PHASE_LIB $REL_PATH/$TO_REL_NAME/$SIGNEDOFF_DIR/SCCS
+   else  
+      echo "Exiting PromoteSpr";
+      exit 1;
+   fi
+fi 
+
+echo "Outstanding SPRs..."
+cd $REL_PATH/$FROM_REL_NAME/$TODO_DIR
+ls PHASE_*
+echo -n "Enter SPR name to promote: ";read READ_SPR_FILE_NAME
+SPR_FILE_NAME=`echo $READ_SPR_FILE_NAME | awk '{printf($1)}' `
+
+if test -f $REL_PATH/$FROM_REL_NAME/$TODO_DIR/$SPR_FILE_NAME 
+then  
+   # find out the spr number here
+   TO_SPR_NUM=`$PHASE_ROOT/project/work/utils/spr/GetSprNum $SPR_COUNTER`;
+
+   # create the file
+   TO_SPR_FILE=`echo -n $REL_PATH/$TO_REL_NAME/$TODO_DIR/; echo -n $SPR_FILE_NAME` 
+
+   echo -n 'Promoting : '
+   echo $REL_PATH/$FROM_REL_NAME/$TODO_DIR/$SPR_FILE_NAME 
+   echo -n 'To        : '
+   echo $TO_SPR_FILE
+ 
+   echo "------------------------------------------------------------------------------"  >> $TO_SPR_FILE
+   echo ""                                                                                >> $TO_SPR_FILE
+   echo -n "Promoted SPR         : "                                                      >> $TO_SPR_FILE
+   echo -n $FROM_REL_NAME                                                                 >> $TO_SPR_FILE
+   echo -n " TO "                                                                         >> $TO_SPR_FILE
+   echo $TO_REL_NAME                                                                      >> $TO_SPR_FILE
+   echo ""                                                                                >> $TO_SPR_FILE
+   echo -n "Promotion Date       : "                                                      >> $TO_SPR_FILE
+   date '+%m/%d/%y : %H:%M'                                                               >> $TO_SPR_FILE
+   echo ""                                                                                >> $TO_SPR_FILE
+   echo "------------------------------------------------------------------------------"  >> $TO_SPR_FILE
+
+   cat $REL_PATH/$FROM_REL_NAME/$TODO_DIR/$SPR_FILE_NAME $TO_SPR_FILE >tempfilezz
+   mv tempfilezz $TO_SPR_FILE    
+   cd $REL_PATH/$TO_REL_NAME/$TODO_DIR
+   sccs create $TO_SPR_FILE
+   rm $REL_PATH/$TO_REL_NAME/$TODO_DIR/,PHASE*
+
+   cd $REL_PATH/$FROM_REL_NAME/$TODO_DIR
+   sccs edit -s $SPR_FILE_NAME
+   sccs delget -s -y"Promoted to $TO_REL_NAME" $SPR_FILE_NAME
+
+else
+   echo "Incorrect SPR specified"
+   exit 1
+fi

@@ -1,0 +1,70 @@
+#!/bin/sh         
+
+REL_PATH=$PHASE_ROOT/project/work/doc/qc/sp
+TODO_DIR=todo
+FIXED=fixed
+SIGNEDOFF=signedoff
+                                 
+echo 
+echo -----------------------------------
+echo PHASE SPR Tracking System V00.03.02
+echo ListSprs
+echo -----------------------------------
+echo 
+
+umask 002
+if test $1 
+then
+        REL_NAME=$1
+else
+        echo  "Usage: ListSprs <release>" 
+        exit 1
+fi
+
+if test -d $REL_PATH/$REL_NAME/$TODO_DIR
+then
+   cd $REL_PATH/$REL_NAME/$TODO_DIR
+else
+   echo $1 does not exist
+   exit 1
+fi
+
+echo TODO in $1 are -
+echo
+
+SPRS=`ls PHASE_*`
+for i in $SPRS
+do
+   echo $i
+   cat $i | grep Description | sed 's/:Problem//' 
+   cat $i | grep SubSystem 
+done
+
+cd $REL_PATH/$REL_NAME/$FIXED
+ 
+echo
+echo FIXED in $1 are -
+echo
+
+SPRS=`ls PHASE_*`
+for i in $SPRS
+do
+   echo $i
+   cat $i | grep Description | sed 's/:Problem//'
+   cat $i | grep SubSystem 
+done
+
+cd $REL_PATH/$REL_NAME/$SIGNEDOFF
+
+echo
+echo SIGNEDOFF in $1 are -
+echo
+
+SPRS=`ls PHASE_*`
+for i in $SPRS
+do
+   echo $i
+   cat $i | grep Description | sed 's/:Problem//'
+   cat $i | grep SubSystem 
+done
+

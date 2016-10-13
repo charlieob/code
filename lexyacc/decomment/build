@@ -1,0 +1,2 @@
+lex decomment.l
+gcc -o decomment lex.yy.c

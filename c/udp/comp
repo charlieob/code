@@ -1,0 +1,5 @@
+#!/bin/csh -xf
+#gcc -lsocket -lnsl -o sender sender.c
+#gcc -lsocket -lnsl -o listener listener.c
+gcc -lsocket -o sender sender.c
+gcc -lsocket -o listener listener.c

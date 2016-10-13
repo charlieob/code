@@ -1,0 +1,65 @@
+#!/bin/csh -f
+#
+#      Author:  Charlie O'Brien
+#        Date:  January 16, 1995
+# Description:  Invokes ADI (xadi) interactively
+#
+
+setenv PATH "/cadre/tool_kit:/usr/local/bin:/bin"
+
+set com=$0
+set prog=$com:t
+
+set configfile = /cadre/tsa/config_file.sdh
+set options = /proj/sdh/users/phase_sw/project/work/utils/ADI/DOM.config
+
+set option_h=false
+set option_m=false
+set arg_m
+
+while ($#argv > 0)
+	switch ($1)
+	case -h:
+		set option_h=true
+	breaksw
+	case -m:
+		set option_m=true
+		if ($#argv > 1) then
+			shift
+			set arg_m=$1
+		else
+			echo "${prog}: missing argument for option $1"
+			goto usage
+		endif
+	breaksw
+	case -?:
+		echo "${prog}: unknown option $1"
+		set option_h=true
+	breaksw
+	default:
+		if (${?args}) then
+			set args="$args $1"
+		else
+			set args=$1
+		endif
+	breaksw
+	endsw
+	shift
+end
+
+if ($option_h == true) goto usage
+
+if ($option_m == false) then
+	echo "${prog}: missing mandatory argument"
+	goto usage
+endif
+
+setenv ADI_TMP $HOME
+
+xadi -c $configfile -O $options -v -d ${arg_m}:0
+
+exit 0
+
+usage:
+echo "Usage: ${prog} -m <machine> [-h]"
+exit 0

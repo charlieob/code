@@ -1,0 +1,34 @@
+#include <stdio.h>
+
+/* a comment */
+aaaaa
+
+/*
+a multi
+line
+comment */
+bbbbbb
+
+ccccc   /* a comment */
+
+ddddd   // another comment
+
+// and another
+eeeeeee
+
+/*
+a nested comment
+and ...  /* here is the nested one */
+ffffff
+*/
+/* back on track */
+
+/*
+a nested C++ comment   // here it is
+did that work?
+*/
+gggggggg
+
+hhhhh   // comment /* C-comment
+c-comment nested in cpp-comment */
+iiiiii

@@ -1,0 +1,66 @@
+#!/bin/csh
+#
+
+#set verbose
+
+setenv PATH "/usr/bin:."
+
+set com=$0
+set usage="Usage: $com:t [-a] [-b arg] [-h] [arg ... ]"
+
+set option_a=false
+set option_b=false
+set option_h=false
+set arg_b
+
+while ($#argv > 0)
+	switch ($1)
+	case -a:
+		set option_a=true
+	breaksw
+	case -b:
+		set option_b=true
+		if ($#argv > 1) then
+			shift
+			set arg_b=$1
+		else
+			echo "$com:t: missing argument for option $1"
+			goto usage
+		endif
+	breaksw
+	case -h:
+		set option_h=true
+	breaksw
+	case -?:
+		echo "$com:t: unknown option $1"
+		set option_h=true
+	breaksw
+	default:
+		if (${?args}) then
+			set args="$args $1"
+		else
+			set args=$1
+		endif
+	breaksw
+	endsw
+	shift
+end
+
+if ($option_h == true) goto usage
+
+if ($option_a == true) echo "option -a"
+if ($option_b == true) echo "option -b (argument $arg_b)"
+
+if (${?args}) then
+	foreach i ($args)
+		echo "processing $i"
+	end
+else
+	echo "processing standard input"
+endif
+
+exit 0
+
+usage:
+echo $usage
+exit 0

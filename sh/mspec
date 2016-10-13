@@ -1,0 +1,55 @@
+#!/bin/sh
+#
+# File:		mspec
+# Author:	Charlie O'Brien
+# Date:		January 22, 1993
+#
+# Description:	This script invokes a program which generates
+#		an mspec outline from a C file which follows
+#		the S3 pseudo-coding standard.
+#
+# Usage:	mspec [-h] [filename ...]
+#		filename may be a C file or a directory containing
+#		one or more C files.
+#
+
+PATH="/usr/ucb:/bin:/usr/bin:"
+USAGE="Usage: `basename $0` [-h] [filename ...]"
+OPTION_H=false
+ARGS=
+
+while [ $# -gt 0 ]
+do	case $1 in
+	-h)	OPTION_H=true; shift
+		;;
+	-*)	echo "`basename $0`: unknown option $1"
+		echo $USAGE; exit
+		;;
+	*)	ARGS="$ARGS $1"; shift
+		;;
+	esac
+done
+
+if $OPTION_H
+then	echo $USAGE; exit
+fi
+
+if [ ! "$ARGS" ]
+then	read ARGS
+fi
+
+for i in $ARGS
+do	if [ -d $i ]
+	then	ls -l $i/*.c | grep -v '^l' | \
+		awk '{print "echo", $8, "`basename", $8, ".c`"}' | /bin/sh | \
+		sed 's/ .*_/ /' | \
+		awk '{print "$HOME/bin/strip_1", $1, $2}' | /bin/sh
+	elif [ -f $i ]
+	then	basename $i .c | sed 's/.*_//' | \
+		awk '{print "$HOME/bin/strip_1", arg, $1}' arg=$i | /bin/sh
+	else	echo "`basename $0`: $i not found"
+	fi
+done
+
+exit
+

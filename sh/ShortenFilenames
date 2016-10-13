@@ -1,0 +1,66 @@
+#!/bin/sh
+#
+
+PATH="/usr/ucb:/bin:/usr/bin:"
+USAGE="Usage: `basename $0` [-p prefix]"
+OPTION_P=false
+OPTION_H=false
+ARGS=
+
+while [ $# -gt 0 ]
+do      case $1 in
+        -p)     OPTION_P=true; shift
+                if [ $# -ne 0 ]
+                then    ARG_P=$1; shift
+                else    echo "`basename $0`: option -p requires an argument"
+                        echo $USAGE; exit
+                fi
+                ;;
+        -h)     OPTION_H=true; shift
+                ;;
+        -*)     echo "`basename $0`: unknown option $1"
+                echo $USAGE; exit
+                ;;
+        *)      ARGS="$ARGS $1"; shift
+                ;;
+        esac
+done
+
+if $OPTION_H
+then    echo $USAGE; exit
+fi
+
+PREFIX=yyyy
+if $OPTION_P
+then    PREFIX=$ARG_P
+fi
+
+NAMES=/tmp/names
+SCRIPT=/tmp/script
+
+ls -l *.c | grep -v '^l' | \
+awk '
+BEGIN{
+	n=0
+}
+{
+	printf "%s %s_0%03d.c\n", $8, prefix, n++
+}' prefix=$PREFIX > $NAMES
+
+cat $NAMES |
+awk '
+{
+	print "ln -s", $1, $2
+}' | /bin/sh
+
+cat $NAMES |
+awk '
+{
+	printf "s/%s/%s/g\n", $1, $2
+}' > $SCRIPT
+
+sed -f $SCRIPT Makefile.sun > Makefile.short.sun
+
+rm $NAMES $SCRIPT
+
+exit

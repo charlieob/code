@@ -1,0 +1,4 @@
+tar -cf $2.tar $2; mv $2 $2.a
+compress -f $2.tar
+crypt $1 <$2.tar.Z >$2; /bin/rm $2.tar.Z
+chmod 600 $2

@@ -1,0 +1,355 @@
+Amstrad,,,,,,,,,,,,,
+HW-ID,CR. No.,CPU,CODE NAME,PCB,Style,Change,Drive Vendor,HDD Size (GB),Quantity,Date of approval,Approval valid for : ,Manufacturer's ECO Ref,
+4F0101,,TP2,,Two Layers,DRX100,,,,"135,000",Oct-98,Baseline  TP2 Completed Product,,
+4F0201,,TP3,,Two Layers,DRX100,TP3 Product,,,"233,000",Apr-99,Baseline TP3 Completed Product,,
+,,,,,DRX100,,,,,,,,
+4F0202,,TP3,,Two Layers,DRX100,New Modulator,,,"33,000",Nov-99,Approval based on 4f0201,,
+4F0203,,TP3,,Two Layers,DRX100,Barb and new bootloader,,,"107,000",Jan-00,Approval based on 4f0202,,
+4F0204,,TP3,,Two Layers,DRX100,"New DAA, surge absorbers",,,"119,000",Mar-00,Approved based on 4f0202,,
+4F0205,,TP3,, Two Layers,- DRX100,New Front Panel,,,"30,000",May-00,Approved  based on 4f0202,,
+4F0206,,TP3,,Two Layers,DRX100,New Front Panel micro changed to mask type,,,"180,000",March,Approved  based on 4f0202,,
+,,,,,,,,,,,,,
+4F0301,,5512,,Two Layers,DRX200,,,,"250,000",21/08/2000,"Hardware signed off
+Software signed off 
+Product Approved",,
+4F0302,,5512,,Two Layers,DRX200,New Rev E silicon,,,0,Nov-00,"Hardware signed off
+Software signed off 
+Product never shipped",,
+4F0303,,5512,,Two Layers,DRX200,New NIM with Zero If ,,,"60,000",Apr-01,Product  approved,,
+,,,,,,,,,,,,,
+4F0401,,Conexant,,Two Layers,DRX250,New CPU New CPU: Conexant manufacturer: Samsung,,,0,,"Hardware signed off
+Software not yet approved
+Not yet approved
+Product withdrawn.",,
+4F0501,,Conexant CX22496,,Two Layers,DRX300,New CPU: Conexant manufacturer: Technisat,,,"237,160",05/10/2001,"Hardware signed off
+Software signed off 
+Product Approved",,
+4F0502,"HW CR112201
+and
+HW CR112201",Conexant CX22496,,Two Layers,DRX300,"New flash supplier TC58FVB160-AFT-70 (Toshiba)
+New Sdram supplier W986432DH-6 (Winbond)",,,,,"Piggy back of the previous Conexant platform
+Hardware signed off 
+Software On going
+Product not approved 
+Product withdrawn. ",,
+,,,,,,,,,,,,,
+4F0601,,Conexant CX22496,,,DRX400,Brand new cost down box,,,,19/08/2002,"Hardware Approved for production.
+Software Signed off",,
+4F0602,HWCR092602-1,Conexant CX22496,,,DRX400,Change of PCB soldermask to Green,,,,27/09/2002,Approved,,
+4F0603,HWCR030402-1,Conexant CX22496,,,DRX400MKII,"Cost Down STB based on DRX400 with Waterproof modulator, new devices, TDA8004 & Conexant devices revision:- 22496 rev 17, 24108 rev 23, 24110 rev 12 ",,,,19/06/2003,"Hardware Approved for production.
+Software Signed off ",,
+,,,,,,,,,,,,,
+4F0701,N/A,Conexant CX24152,,,DRX500,"Brand new cost down box. Conexant 'Brazos' CX24152-24G (with integrated Demod) chipset, Conexant V34 modem CX86500-26, Conexant CX24109-11 tuner, Macronix 2MB Flash MX29LV160 BGA package",,,100k,29/07/2005,"Hardware Approved for production.
+Software Signed off ",,
+,,,,,,,,,,,,,
+4F0801,N/A,Conexant CX24152,,,DRX550,Brand new  cost down model employing common cosmetics.,,,,16/12/2005,Approved for production,,
+4F0802,HWCR251105-2A,Conexant CX24152,,,DRX550,The same as 4F0801 employing virtually the same tuner crystal (10.111MHz) but with higher tolerance resulting in lower driver level dependency.,,,,22/12/2005,Signed off for production/service,TBA,
+4F0803,HWCR150206-2,Conexant CX24152,,,DRX550,"The same as 4F0802 but RoHs Compliant.
+Amstrad were required to make bootloader & EPG changes for signal strength calibration.  New bootloadere version implemented (55F308).",,,,24/07/2006,Hardware signed off                Software approved,,
+4F0804,HWCR180806-1,Conexant CX24152,,,DRX550,The same as 4F0803 with revised PSU design incorporating new cap supplier Samwha & surge protection. This has been signed off on the basis they calibrate their EPG signal strength indicator to display correct values,,,c40K,13/10/2006,Approved for production,TBC,
+4F0805,HWCR241006-1,Conexant CX24152,,,DRX550,The same as 4F0803  but with revised F' connector & modified back panel slot and revised PSU design incorporating new cap supplier Samwha & surge protection ,,,,20/10/2006,Approved for production/service,TBC,
+4F0806,HWCR061206-1,Conexant CX24152,,,DRX550,Removal of HSDP port.  Changes include HSDP connector removal with 4 logic buffers and their associated resistors. 1 capacitor and Transistor to be removed.  Also 1 resistor to be fit.,,,,19/12/2006,Approved for production,TBD,
+4F0807,HWCR002-2007,Conexant CX24152,,REV 2,DRX550S,Due to removal of HSDP Amstrad is introducing new PCB design includes fix for Zinwell LNB,,,,07/11/2007,Approved for production,n/a,
+4F0808,HWCR002-2008,Conexant CX24152,,REV 2,DRX550S,The same as 4F0807 with new Hambung Mondex Card reader/interactive slot. The same as 4F0807 with reliability Improvements to SMPSU ,,,,28/02/2008,Approved for production,,
+4F0809,HWCR005-2008,Conexant CX24152,,REV 2,DRX550S,The same as 4F0807 with reliability Improvements to SMPSU ,n/a,,,29/10/2008,Approved  for production,,
+,,,,,,,,,,,,,
+4F0809,TBC,Conexant CX24152,,REV 3,DRX550SL,The same as 4F0808 but compliant to new 1 watt off mode new low power directive. ,,,,,Product not approved and never shipped,,
+4F080A,,Conexant CX24152,,REV 3,DRX550SL,As per 4F0809 but with minor component changes and metallic lid,,,91K,20/11/2009,Approved for production,,
+4F080B,HWCR100119,Conexant CX24152,,REV 3,DRX550SL,The same as 4F080A but with flash die shrink changed,,,15K,26/01/2010,Approved for production,,
+4F080C,HWCR100208,Conexant CX24152,,REV 3,DRX550SL,The same as 4F080B but with new SDRAM and new bootloader version 55F310,,,75K,19/02/2010,Approved for production,,
+4F080D,HWCR100305,Conexant CX24152,,REV 3,DRX550SL,The same as 4F08C but with new Samsung RF modulator,,,60K,,Awaiting approval for production,,
+4F0810,N/A,Conexant CX24152,,REV 7,DRX550SL MKII,The same as 4F080D but with AKM scart switch and Power Switch device (U1) revised.,N/A,,,,,,
+,,,,,,,,,,,,,
+4F7001,N/A,BCM7350VKFEBA2G,,Issue4,DRX595,The first baseline model HD Digibox,N/A,,,14/01/2011,MP Production started 14/1/2011,,
+4F7002,N/A,BCM7350VKFEBA2G,,,DRX595,The same as 4F7001 but with a change of bootloader to V0.18,N/A,,,05/03/2011,Approved for production,,
+4F7003,N/A,BCM7350VKFEBA2G,,,DRX595,Hardware ID incremented to demark production quantity,N/A,,,20/07/2011,Approved for production,,
+4F7004,N/A,BCM7350VKFEBA2G,,,DRX595,Change to card door and front panel. ,N/A,,,20/10/2011,Approved for production,,
+4F7005,N/A,BCM7350VKFEBA2G,,,DRX595,Hardware ID incremented to demark production quantity,N/A,,,21/03/2012,Approved for production,,
+4F7006,N/A,BCM7350VKFEBA2G,,,DRX595,Low power (less than 0.5w) version of DRX595,N/A,,400K,07/09/2012,Approved for production,,
+4F7007,N/A,BCM7350VKFEBA2G,,,DRX595,"Low power (less than 0.5w) version of DRX595
+HWID increment for production batch size. Produced 400k with previous HWID.",N/A,,,14/01/2014,Approved for production,,
+,,,,,,,,,,,,,
+,"4F7019
+Last HWID 
+DRX595",BCM7350VKFEBA2G,,,DRX595,Last DRX595 HWID,N/A,,,19/12/2013,Placeholder,,
+,,,,,,,,,,,,,
+4F701A,"DRX595 Lite
+4F701A to 4F704F",BCM7350VKFEBA2G,,,DRX595L,"DRX595 Lite
+Same as 4F7006 with modem etc removed. See ECR 1290.",N/A,,,19/12/2013,Approved for  production,,
+,,,,,,,,,,,,,
+,"4F704F
+Last HWID ",BCM7350VKFEBA2G,,,DRX595L,Last HWID DRX595 Lite,N/A,,,19/12/2013,Placeholder,,
+,,,,,,,,,,,,,
+4F7050,N/A,BCM7350VKFEBA2G,,,DRX595H,"Hotel version of the DRX595(4F7002), secured card door and mounting bracket",N/A,,,01/03/2012,Approved for production,,
+4F7051,N/A,BCM7350VKFEBA2G,,,DRX595H,Low power version of the DRX595H,N/A,,,13/09/2012,Approved for production,,
+,,,,,,,,,,,,,
+,"4F7080
+Last HWID 
+DRX595H",BCM7350VKFEBA2G,,,DRX595H,Last HWID DRX595H ,N/A,,,19/12/2013,Placeholder,,
+,,,,,,,,,,,,,
+4F7081,"DRX595H Lite
+4F7081 to 4F70FF",BCM7350VKFEBA2G,,,DRX595HL,"DRX595 Lite
+Same as 4F7051 with modem etc removed. See ECR 1290.",N/A,,,19/12/2013,Approved for  production,,
+,,,,,,,,,,,,,
+,"4F70FF
+Last HWID",BCM7350VKFEBA2G,,,DRX595HL,Last HWID DRX595H Lite,N/A,,,19/12/2013,Placeholder,,
+,,,,,,,,,,,,,
+4F2001,N/A,NEC EMMA2 Sky+,PVR2,,DRX180,Amstrad PVR baseline product.,Seagate C2,40,"180,000",27/02/2004,"Hardware signed off
+Software signed off 
+Approved for production",,
+4F2002,ECN0087,NEC EMMA2 Sky+,PVR2,,DRX180,"New Bootloader (1.04) with improved speed and Booting.
+No need to differentiate between 01 or 02's",Seagate C2,40,"120,000",27/02/2004,Approved for production,ECN0087,
+4F2003,HWCR120704-1,NEC EMMA2 Sky+,PVR2,,DRX180,Increase of local decoupling on the Video DAC within the EMMA MPEG II decoder IC to improve video signal and reduce instances of visible banding. Change value of decoupling capacitor C369 from 100uF to 2200uF.,Seagate C2,40,"48,000",07/01/2005,Approved for production and service.,BSKYB_ECO001A,
+4F2004,N/A,NEC EMMA2 Sky+,PVR2,,DRX180,The same as 4F2001with retro fix (visible banding) described above.,Seagate C2,40,,07/01/2005,Approved for service,BSKYB_ECO001A,
+4F2005,HWCR006-2008 ,NEC EMMA2 Sky+,PVR2,,DRX180,Units reworked in accordance with change version 3 are classed as having a ‘part modification’  introduced in service as corrective measure for A/V glitch,Seagate C2,40,,28/10/2008,Approval for service & repair,ECO007,
+4F2006,HWCR006-2008 ,NEC EMMA2 Sky+,PVR2,,DRX180,Units reworked in accordance with change version 1 and 2 are classed as having the ‘full modification'  introduced in service as corrective measure for A/V glitch,Seagate C2,40,,28/10/2008,Approval for service & repair,ECO007,
+,,,,,,,,,,,,,
+4F2101,N/A,NEC EMMA2 Sky+,PVR3,NON RoHs,DRX280,Original baseline model PVR3.0,Seagate U9,160,,N/A,Product not approved,,
+4F2102,N/A,NEC EMMA2 Sky+,PVR3,NON RoHs,DRX280,Changes to bootloader not valid for production,Seagate U9,160,,N/A,Product not approved,,
+4F2103,N/A,NEC EMMA2 Sky+,PVR3,NON RoHs,DRX280,Brand new PVR3.0 with v2.08 bootloader manufactured by Amstrad,Seagate U9,160,,31/08/2005,Approved for production,N/A,
+4F2104,HWCR251105-1A,NEC EMMA2 Sky+,PVR3,NON RoHs,DRX280,The same as 4F2103 employing virtually the same tuner crystal (10.111MHz) but with higher tolerance resulting in lower driver level dependency.,Seagate U9,160,,22/12/2005,Signed off for production/service,TBA,
+4F2105,HWCR150206-1,NEC EMMA2 Sky+,PVR3,NON RoHs,DRX280,The same as 4F2103 but with Tonka 2 Seagate HDD.,Seagate Tonka 2,160,,18/05/2006,Approved for Service,BSKYB_ECO003,
+4F2106,HWCR150206-1,NEC EMMA2 Sky+,PVR3,NON RoHs,DRX280,The same as 4F2104 but with Tonka 2 Seagate HDD,Seagate Tonka 2,160,,18/05/2006,Approved for Production/Service,BSKYB_ECO003,
+4F2107,HWCR150206-1,NEC EMMA2 Sky+,PVR3,NON RoHs,DRX280,The same as 4F2106 but special 2000 units deployed for HDD improvement tracking,Seagate Tonka 2,160,"2,000",18/05/2006,Approved for production,,
+4F2108,HWCR180706-1,NEC EMMA2 Sky+,PVR3,RoHs,DRX280,"Fully migrated ROHS model with Tonka 2 drive, includes new PSU & revised F connector. Plus change from Licon to Samwha Caps corrective measure for A/V glitch for tuner i/p 1 only.",Seagate Tonka 2,160,,16/10/2006,Approved for production,,
+4F2109,HWCR041206-1,NEC EMMA2 Sky+,PVR3,RoHs,DRX280,The same as 4F2108 but without HSDP and with the card reader manufacturer changed from Amphenol to Hamburg. Includes change from Peace  tuner caps i/p 2 to equivalent Samwha type. This is corresponding corrective measure for A/V glitch on i/p 2 DOM 29/05/07 onwards.,Seagate Tonka 2,160,,01/02/2007,Approved for production,,
+4F2110,HWCR003-2007,NEC EMMA2 Sky+,PVR3,RoHs,DRX280,The same as 4F2109 with revised PSU design & Seagate Nighthawk (DB35.3) HDD,Seagate Nighthawk,160,200,23/11/2007,200 off production build made specifically for test,,
+4F2111,HWCR003-2007,NEC EMMA2 Sky+,PVR3,RoHs,DRX280,The same as 4F2109 with revised PSU design,Seagate Tonka 2,160,,23/11/2007,Approved for production,,
+4F2112,HWCR003-2007,NEC EMMA2 Sky+,PVR3,RoHs,DRX280,The same as 4F2111 with Seagate Nighthawk (DB35.3) HDD,Seagate Nighthawk,160,,23/11/2007,Approved for production,,
+4F2113,HWCR003-2007,NEC EMMA2 Sky+,PVR3,NON RoHs,DRX280,The same as 4F2103/05 with Seagate Nighthawk deployed through service & repair.,Seagate Nighthawk,160,,23/11/2007,Approval for service & repair,BSKYB_ECO008,
+4F2114,HWCR003-2007,NEC EMMA2 Sky+,PVR3,NON RoHs,DRX280,The same as 4F2104/06 with Seagate Nighthawk deployed through service & repair,Seagate Nighthawk,160,,23/11/2007,Approval for service & repair,BSKYB_ECO008,
+4F2115,HWCR003-2007,NEC EMMA2 Sky+,PVR3,NON RoHs,DRX280,The same as 4F2106/07 with Seagate Nighthawk deployed through service & repair,Seagate Nighthawk,160,,23/11/2007,Approval for service & repair,BSKYB_ECO008,
+4F2116,HWCR003-2007,NEC EMMA2 Sky+,PVR3,NON RoHs,DRX280,The same as 4F2108 with Seagate Nighthawk deployed through service & repair,Seagate Nighthawk,160,,23/11/2007,Approval for service & repair,BSKYB_ECO008,
+4F2117,HWCR001-2008,NEC EMMA2 Sky+,PVR3,RoHs,DRX280,The same as 4F2116 with new Hambung Mondex Card reader/interactive slot,Seagate Nighthawk,160,,28/02/2008,Approved for production,,
+4F2118,HWCR003-2008 /HWCR004-2008,NEC EMMA2 Sky+,PVR3,RoHs,DRX280,Emma2-Wafer-Size-Change And Transformer-Varnish-Change,Seagate Nighthawk,160,,01/08/2008,Approved for production,,
+,,,,,,,,,,,,,
+4F3001,"Picotronics
+N/A",Conexant CX24176-79S3Z,PVR4,REV 3,DRX780UK,First baseline single HD product developed by Amstrad,WD Pinnacle,320,"271,777",06/10/2008,Approved for production,,
+4F3002,"Picotronics
+HWRC002-DRX780",Conexant CX24176-79S3Z,PVR4,REV 3,DRX780UK,"The same as 4F3001 but with WD Midori HDD introduced within service & repair, includes 89k originally manufactured",WD Midori,320,"88,704",26/03/2009,Approved for mass production and service & repair,ECO015,
+4F3003,"Picotronics
+DRX780-HWRC003",Conexant CX24176-7AS3Z,PVR4,REV 3,DRX780UK,The same as 4F3001 but with Trinity E0 change p/n CX24176-7AS3Z and bootloader v8 applied within service & repair only,WD Pinnacle,320,0,06/10/2009,Approved for service and repair,ECO016,
+4F3004,"Picotronics
+DRX780-HWRC003",Conexant CX24176-7AS3Z,PVR4,REV 3,DRX780UK,The same as 4F3002 but with Trinity E0 change p/n CX24176-7AS3Z. Includes 10k products reworked to bootloader v8,WD Midori,320,"10,000",13/04/2009,Approved for production,,
+4F3005,"Picotronics
+DRX780-HWCR005",Conexant CX24176-7AS3Z,PVR4,REV 3,DRX780UK,"The same as 4F3001 but with WD Midori HDD, Trinity E0 change p/n CX24176-7AS3Z and bootloader v8 applied within service & repair only",WD Midori,320,0,06/10/2009,Approved for service and repair,ECO017,
+4F3006,"Picotronics
+DRX780-HWCR007",Conexant CX24176-7AS3Z,PVR4,REV 3,DRX780UK,"The same as 4F3004 new build but with bootloader version 008 incorporates NXP CPU/DDR timing improvements, Picotronics built ",WD Midori,320,,15/05/2009,Approved for production,,
+4F3007,"Picotronics
+DRX780-HWCR005",Conexant CX24176-7AS3Z,PVR4,REV 3,DRX780UK,The same as 4F3003 but with WD Midori HDD & Trinity EO version NXP CPU reworked in service & repair only,WD Midori,320,,,Awaiting approval for service & repair,,
+4F3008,"Picotronics
+DRX780-HWCR005",Conexant CX24176-7AS3Z,PVR4,REV 3,DRX780UK,The same as 4F3007 but with new (larger) HDD,Seagate,500,,24/09/2014,Approved for service and repair,,
+4F3009,"Picotronics
+DRX780-HWCR005",Conexant CX24176-79S3Z,PVR4,REV 3,DRX780UK,The same as 4F3001 or 2 but with new (larger) HDD,Seagate,500,,15/01/2015,Approved for service and repair,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+4F30A1,"Celestica
+DRX780-HWRC005",Conexant CX24176-7AS3Z,PVR4,REV 3,DRX780UK,The same as 4F3004  made at Celestica but with equivalent Rubicon electrolytic capacitors 68 pcs. Supersedes NDS prefix 4F3005 which was discarded,WD Midori,320,700,18/05/2009,Approved for production & service,,
+4F30A2,"Celestica
+DRX780-HWCR008",Conexant CX24176-7AS3Z,PVR4,REV 3,DRX780UK,"The same as 4F30A1. Extra HW ID requested by Amstrad Management for bootloader 700 rework may or may not be used, to be advised",WD Midori,320,,,Awaiting confirmation of Amstrad's MP plans TBC,,
+4F30A3,"Celestica
+DRX780-HWRC009",Conexant CX24176-7AS3Z,PVR4,REV 3,DRX780UK,The same as 4F30A1 new build but with bootloader version 008 incorporates NXP CPU/DDR timing improvements ,WD Midori,320,,15/05/2009,Approved for production,,
+4F30A4,"Celestica
+DRX780-HWRC009",Conexant CX24176-7AS3Z,PVR4,REV 3,DRX780UK,The same as 4F30A3 but with new  (larger) HDD,Seagate,500,,24/09/2014,Approved for service and repair,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+4F3101,4F3100 to 4F314F Picotronics,Broadcom BCM7335_ BCM7335QKFSBA1G,PVR5,Rev 5,DRX890,2nd generation single HD product developed by Amstrad,Seagate Pipeline,500,,31/08/2009,Approved for production,,
+4F3102,,Broadcom BCM7335_ BCM7335QKFSBA1G,PVR5,Rev 5,DRX890,Hardware ID incremented to demark production quantities tbc,Seagate Pipeline,500,,,Approved for production,,
+4F3103,,Broadcom BCM7335_ BCM7335QKFSBA1G,PVR5,Rev 5,DRX890,Hardware ID incremented to demark production quantities tbc,Seagate Pipeline,500,,,Approved for production,,
+4F3104,,Broadcom BCM7335_ BCM7335QKFSBA1G,PVR5,Rev 5,DRX890,Hardware ID incremented to demark production quantities tbc,Seagate Pipeline,500,,,Approved for production,,
+4F3105,,Broadcom BCM7335_ BCM7335QKFSBA1G,PVR5,Rev 5,DRX890,Darwin introduced as the factory software load. (2/8/10),Seagate Pipeline,500,,02/08/2010,Approved for production,,
+4F3106,,Broadcom BCM7335_ BCM7335QKFSBA1G,PVR5,Rev 5,DRX890,Hardware ID incremented to demark production quantity,Seagate Pipeline,500,,,Approved for production,,
+4F3107,,Broadcom BCM7335_ BCM7335QKFSBA1G,PVR5,Rev 5,DRX890,Hardware ID incremented to demark production quantity,Seagate Pipeline,500,,19/11/2010,Approved for production,,
+4F3108,,Broadcom BCM7335_ BCM7335QKFSBA1G,PVR5,Rev 5,DRX890,Hardware ID incremented to demark production quantity,Seagate Pipeline,500,,30/12/2010,Approved for production,,
+4F3109,,Broadcom BCM7335_ BCM7335QKFSBA1G,PVR5,Rev 6,DRX890,Compliant for external ethernet cabling,Seagate Pipeline,500,,01/03/2011,Approved for production,,
+4F310A,,Broadcom BCM7335_ BCM7335QKFSBA1G,PVR5,Rev 6,DRX890,Hardware ID incremented to demark production quantity,Seagate Pipeline,500,,13/06/2011,Approved for production,,
+4F310B,,Broadcom BCM7335_ BCM7335QKFSBA1G,PVR5,Rev 6,DRX890,Hardware ID incremented to demark production quantity,Seagate Pipeline,500,,23/10/2011,Approved for production,,
+4F310C,,Broadcom BCM7335_ BCM7335QKFSBA1G,PVR5,Rev 6,DRX890,Hardware ID incremented to demark production quantity,Seagate Pipeline,500,,12/01/2012,Approved for production,,
+4F310D,,Broadcom BCM7335_ BCM7335QKFSBA1G,PVR5,Rev 6,DRX890,Use of 5 per Alpha & Omega AOZ1073 regulator to replace the 5 per Vishay SIC413 ,Seagate Pipeline,500,,03/05/2012,Approved for production,,
+4F3120,,Broadcom BCM7335_ BCM7335QKFSBA1G,PVR5,Rev 6,DRX890,"Hardware for 0.5W box, 1st used on 100 off build in April 2012",Seagate Pipeline,500,,27/03/2012,"100 of sample build in April , box will be used through to mass production in Oct 2012",,
+4F3125,,Broadcom BCM7335_ BCM7335QKFSBA1G,PVR5,Rev 6,DRX890W,As per 4F3120 but including integral WiFi,Seagate Pipeline,500,,13/09/2012,Approved for production,,
+4F3126,,Broadcom BCM7335_ BCM7335QKFSBA1G,PVR5,Rev 6,DRX890W,"As per 4F3125, 250K production increment",Seagate Pipeline,500,,06/06/2013,Approved for production,,
+4F3127,,Broadcom BCM7335_ BCM7335QKFSBA1G,PVR5,Rev 6,DRX890W,"As per 4F3126 (4F3125), 250K production increment",Seagate Pipeline,500,,13/08/2013,Approved for production,,
+4F3128,,Broadcom BCM7335_ BCM7335QKFSBA1G,PVR5,Rev 6,DRX890W,"As per 4F3127 (4F3125), 250K production increment. 
+24/10/2013 DRX890W WiFi, 0.5W
+Now to be used to indicate change in manufacturing process.",Seagate Pipeline,500,,"13/08/2013
+revised
+24/10/2013",Approved for production,,
+4F3129,,Broadcom BCM7335_ BCM7335QKFSBA1G,PVR5,Rev 6,DRX890W,"As per 4F3127 (4F3125), 250K production increment. 
+ DRX890W WiFi, 0.5W",Seagate Pipeline,500,,Used 31/05/14 recorded 13/08/2014,Approved for production,,
+,,,,,,,,,,,,,
+,"4F3132
+Last HWID 
+DRX890W",Broadcom BCM7335_ BCM7335QKFSBA1G,PVR5,Rev 6,DRX890W,Upper limit for current Picotronics DRX890W HW ID range. With current software uses existing 245/245GB partitioning.,,,,19/12/2013,Placeholder,,
+,,,,,,,,,,,,,
+4F3133,"DRX890W Lite
+4F3133 to 4F314F",Broadcom BCM7335_ BCM7335QKFSBA1G,PVR5,Rev 6,DRX890WL,"DRX890W Lite
+As per 4F3128, DRX890W WiFi, 0.5W but with modem removed. See ECR1196.",Seagate Pipeline,500,,19/12/2013,Approved for sample production,,
+4F3134,,Broadcom BCM7335_ BCM7335QKFSBA1G,PVR5,Rev 6,DRX890WL,"DRX890W Lite
+As per 4F3133, but with change to Seagate HDD.See ECR1388.",Seagate Pipeline,500,,22/09/2014,Approved for production,,
+,,,,,,,,,,,,,
+,"4F314F
+Last HWID DRX890WL",Broadcom BCM7335_ BCM7335QKFSBA1G,PVR5,Rev 6,DRX890WL,Upper limit for current Picotronics DRX890WL HW ID range. ,,,,19/12/2013,Placeholder,,
+,,,,,,,,,,,,,
+4F3151,DRX895 4F3150 to 4F319F,Broadcom BCM7335_ BCM7335QKFSBA1G,PVR6,Rev 5,DRX895,"The same as 4F3101 but with 1.5 TB hard disk drive, project platinum",tbc,1500,,01/01/2010,Approved for production,,
+4F3152,,Broadcom BCM7335_ BCM7335QKFSBA1G,PVR6,Rev 5,DRX895,Darwin introduced as the factory software load for DRX895 and new WD HDD (WD15EVDS-63V9B1),WD 3D Dragon Fly,1500,,01/01/2010,Approved for production,,
+4F3153,,Broadcom BCM7335_ BCM7335QKFSBA1G,PVR6,Rev 5,DRX895,WD B1 HDD (WD15EVDS-63V9B1) fitted after manufacture.,WD 3D Dragon Fly,1500,,25/01/2011,Approved for service,ECO020,
+4F3154,,Broadcom BCM7335_ BCM7335QKFSBA1G,PVR6,Rev 6,DRX895,As per 4F3152 but compliant for external ethernet cabling,WD 3D Dragon Fly,1500,,01/03/2011,Approved for production,,
+4F3155,,Broadcom BCM7335_ BCM7335QKFSBA1G,PVR6,Rev 6,DRX895,"2TB box. New partition 1.5TB user space, 0.5TB anytime (Based on 4F3163 using 5 of Alpha & Omega regulators instead of Vishay SIC413)",Hitachi - Mariner,2000,,15/05/2012,"Approved for production, production start 9 July 2012",,
+4F3156,,Broadcom BCM7335_ BCM7335QKFSBA1G,PVR6,Rev 6,DRX895,2TB box. Same as 4F3155 but with 0.5W power in passive standby functionality,Hitachi - Mariner,2000,,15/05/2012,"Approved for production, production start November 2012",,
+4F3157,,Broadcom BCM7335_ BCM7335QKFSBA1G,PVR6,Rev 6,DRX895W,"2TB DRX895W WiFi, 0.5W. HDD partition 1.6/0.4TB.
+Production units to use last 25k Hitachi 2TB HDDs.
+
+30 test units built with Seagate Pipeline 2TB AF HDD. These to be updated to 4F3170 HWID.
+",Hitachi - Mariner,2000,,"26/11/2012
+Update 13/02/13","Approved for production.
+
+(26/11/12 Approved for internal test. HW ID used as it enables 2TB partitioning with existing software for test.)",,
+4F3158,,Broadcom BCM7335_ BCM7335QKFSBA1G,PVR6,Rev 5,DRX895,"2TB box. Service centre updgrade of 4F3151 to 4F3153. A grade stock. 2TB HDD fitted, partitioning 1.6/0.4TB",Hitachi - Mariner,2000,,14/11/2012,Approved for service,,
+4F3159, ,Broadcom BCM7335_ BCM7335QKFSBA1G,PVR6,Rev 6,DRX895,"2TB box. Service centre updgrade of 4F3154. A grade stock. 2TB HDD fitted, partitioning 1.6/0.4TB",Hitachi - Mariner,2000,,14/11/2012,Approved for service,,
+4F315A,,Broadcom BCM7335_ BCM7335QKFSBA1G,PVR6,Rev 6,DRX895,"2TB box. As 4F3155 but HDD change, Seagate  Pipeline 2TB Bacall fitted for test, ST2000VM003.",Seagate  Pipeline,2000,50,11/10/2012,Approved for internal test. ,,
+4F315B,,Broadcom BCM7335_ BCM7335QKFSBA1G,PVR6,Rev 6,DRX895,"2TB box. As 4F3156 but HDD change, Seagate  Pipeline 2TB Bacall fitted for test, ST2000VM003. 0.5W in standby.",Seagate  Pipeline,2000,"4,080",22/10/2012,Approved for test & trials. Trial start Q4 2012.,,
+4F315C,,,,,,Placeholder,,,,,,,
+4F315D,,Broadcom BCM7335_ BCM7335QKFSBA1G,PVR6,Rev 6,DRX895,"2TB box. As 4F3156 but HDD change, Western Digital 2TB  AF fitted  for test,WD20EURS. 0.5W in standby.","WD 
+AV-GP",2000,,22/10/2012,Approved for test & trials. Trial start Q4 2012.,,
+4F315E,,Broadcom BCM7335_ BCM7335QKFSBA1G,PVR6,Rev 6,DRX895,2TB box. Service centre updgrade of 4F3160 to 4F3162. A grade stock. Partitioning 1.6/0.4TB,Hitachi - Mariner,2000,,14/11/2012,Approved for service,,
+4F315F,,Broadcom BCM7335_ BCM7335QKFSBA1G,PVR6,Rev 6,DRX895,2TB box. Service centre updgrade of 4F3163. A grade stock. Partitioning 1.6/0.4TB,Hitachi - Mariner,2000,,14/11/2012,Approved for service,,
+4F3160,,Broadcom BCM7335_ BCM7335QKFSBA1G,PVR6,Rev 6,DRX895,New HDD to be used for field trial prior to approval,Hitachi - Mariner,2000,"1,370",,For field trial use only,,
+4F3161,,Broadcom BCM7335_ BCM7335QKFSBA1G,PVR6,Rev 6,DRX895,New 2TB Drive for Mass Production (User space stays as 1TB),Hitachi - Mariner,2000,,22/08/2011,Approved for production,,
+4F3162,,Broadcom BCM7335_ BCM7335QKFSBA1G,PVR6,Rev 6,DRX895,Latest version of Mariner drive and updated front panel artwork (User Space 1TB),Hitachi - Mariner,2000,,09/01/2012,Approved for production,,
+4F3163,,Broadcom BCM7335_ BCM7335QKFSBA1G,PVR6,Rev 6,DRX895,Use of 5 per Alpha & Omega AOZ1073 regulator to replace the 5 per Vishay SIC413  (User Space 1TB),Hitachi - Mariner,2000,,04/05/2012,Approved for production,,
+,,,,,,,,,,,,,
+,4F3164 to 4F316F,,,,,"13/01/14 Current software allocates this HWID range HDD as 896GB System, 1093 user.
+There are 12 HWIDs here that could be used if HDD was allocated as per 4F3170 to 4F319F, 400GB system, 1592GB user.
+",,,,13/01/2014,"ACTION REQUIRED, SW.",,
+,,,,,,,,,,,,,
+4F3170,,Broadcom BCM7335_ BCM7335QKFSBA1G,PVR6,Rev 6,DRX895W,"2TB DRX895W WiFi, 0.5W - NEEDS SOFTWARE MODS FOR HDD PARTITION.
+Current software (R3) will partition 1.1/0.9TB.",Seagate  Pipeline,2000,,26/11/2012,"NEEDS SOFTWARE MODS FOR HDD PARTITION 
+- Done in R4",,
+4F3171,,Broadcom BCM7335_ BCM7335QKFSBA1G,PVR6,Rev 6,DRX895W,"2TB DRX895W WiFi, 0.5W
+Change in manufacturing process.",Seagate  Pipeline,2000,,24/10/2013,Approved for production,,
+,,,,,,,,,,,,,
+4F3175,,Broadcom BCM7335_ BCM7335QKFSBA1G,PVR6,Rev 5,DRX895,"Service centre upgrade of 4F3151,2,3 to use 2TB Seagate HDD. Plastics changed and format set to 2TB box.
+",Seagate  Pipeline,2000,,20/01/2014,Approved for service,,
+4F3176,,Broadcom BCM7335_ BCM7335QKFSBA1G,PVR6,Rev 6,DRX895,"Service centre upgrade of 4F3154,, and other external Ethernet compliant boxes to use 2TB Seagate HDD. Plastics changed and format set to 2TB box.
+",Seagate  Pipeline,2000,,20/01/2014,Approved for service,,
+4F3177,,Broadcom BCM7335_ BCM7335QKFSBA1G,PVR6,Rev 6,DRX895W,"2TB box. As 4F3171 but HDD change, 
+New Western Digital 2TB  AF fitted  for test,WD20EURS with revised SoC packaging.","WD 
+AV-GP",2000,,20/12/2013,Approved for test & trials. Tests start Q1 2014.,,
+4F3178,,Broadcom BCM7335_ BCM7335QKFSBA1G,PVR6,Rev 6,DRX895W,"2TB box. As 4F3171 but HDD change, 
+New Seagate 2TB  AF Bacall BP2 fitted  for test. HDD is running change to BP1 but includes dynamic balance.","Seagate  Pipeline
+BP2",2000,,06/02/2014,Approved for test & trials. Tests start Q1 2014.,,
+,,,,,,,,,,,,,
+,"4F317D
+Last HWID 
+DRX895W",Broadcom BCM7335_ BCM7335QKFSBA1G,PVR6,Rev 6,DRX895W,Upper limit for current DRX895W HW ID range. ,,,,19/12/2013,Placeholder,,
+,,,,,,,,,,,,,
+4F317E,"DRX895W Lite
+4F317E to 4F319F",Broadcom BCM7335_ BCM7335QKFSBA1G,PVR6,Rev 6,DRX895WL,"DRX895W Lite
+As per 4F3171 but with modem etc removed. See ECR1196.","Seagate  Pipeline
+BP1",2000,,19/12/2013,Approved for sample production,,
+4F317F,,Broadcom BCM7335_ BCM7335QKFSBA1G,PVR6,Rev 6,DRX895WL,"DRX895W Lite
+As per 4F3178 but with modem etc removed. See ECR1196.","Seagate  Pipeline
+BP2",2000,,17/07/2014,Approved for  production,,
+4F3180,,Broadcom BCM7335_ BCM7335QKFSBA1G,PVR6,Rev 6,DRX895WL,"DRX895W Lite
+As per 4F3177 but with modem etc removed. See ECR1196.","WD 
+AV-GP",2000,,17/07/2014,Approved for  production,,
+,,,,,,,,,,,,,
+,"4F319F
+Last HWID
+DRX895WL",Broadcom BCM7335_ BCM7335QKFSBA1G,PVR6,Rev 6,DRX895WL,Upper limit for current DRX895WL HW ID range. ,,,,19/12/2013,Placeholder,,
+,,,,,,,,,,,,,
+4F31A1,DRX890-HWCR001,Broadcom BCM7335_ BCM7335QKFSBA1G,PVR5,Rev 5,DRX890,The same as 4F3101 manufactured by Celestica usng WD Midori drive,WD Midori,500,,,Awaiting approval for production,,
+4F31A2,4F31A0 to 4F31CF Celestica,Broadcom BCM7335_ BCM7335QKFSBA1G,PVR5,Rev 5,DRX890,The same as 4F31A1 but built using Seagate Pipeline HDDs,Seagate Pipeline,500,,01/01/2010,Approved for production,,
+4F31A3,,Broadcom BCM7335_ BCM7335QKFSBA1G,PVR5,Rev 5,DRX890,Hardware ID incremented to demark production quantities tbc,Seagate Pipeline,500,,,Approved for production,,
+4F31A4,,Broadcom BCM7335_ BCM7335QKFSBA1G,PVR5,Rev 5,DRX890,Darwin introduced as the factory software load. (2/8/10),Seagate Pipeline,500,,02/08/2010,Approved for production,,
+4F31A5,,Broadcom BCM7335_ BCM7335QKFSBA1G,PVR5,Rev 5,DRX890,Hardware ID incremented to demark production quantity,Seagate Pipeline,500,,13/11/2010,Approved for production,,
+4F31A6,,Broadcom BCM7335_ BCM7335QKFSBA1G,PVR5,Rev 5,DRX890,Hardware ID incremented to demark production quantity,Seagate Pipeline,500,,18/02/2011,Approved for production,,
+4F31A7,,Broadcom BCM7335_ BCM7335QKFSBA1G,PVR5,Rev 6 ,DRX890,Compliant for external ethernet cabling,Seagate Pipeline,500,,01/03/2011,Approved for production - Production started 8/6/2011,,
+4F31A8,,Broadcom BCM7335_ BCM7335QKFSBA1G,PVR5,Rev 6 ,DRX890,The same as 4F31A7. Incremented to demark production qty.,Seagate Pipeline,500,,24/10/2011,Approved for production,,
+4F31A9,,Broadcom BCM7335_ BCM7335QKFSBA1G,PVR5,Rev 6 ,DRX890,Use of 5 per Alpha & Omega AOZ1073 regulator to replace the 5 per Vishay SIC413 ,Seagate Pipeline,500,,24/10/2011,Approved for production,,
+4F31B0,,Broadcom BCM7335_ BCM7335QKFSBA1G,PVR5,Rev 6 ,DRX890,Low power version (less than 0.5w) of DRX890,Seagate Pipeline,500,,13/09/2012,Approved for production,,
+4F31B5,,Broadcom BCM7335_ BCM7335QKFSBA1G,PVR5,Rev 6 ,DRX890W,As per 4F31B0 but including integral WiFi,Seagate Pipeline,500,,14/11/2012,"Approved for production (Placeholder, production not expected at 14/11/12)",,
+4F31B6,,Broadcom BCM7335_ BCM7335QKFSBA1G,PVR5,Rev 6 ,DRX890W,"As per 4F31B5, 250K production increment",Seagate Pipeline,500,,26/09/2013,Approved for production,,
+4F31B7,,Broadcom BCM7335_ BCM7335QKFSBA1G,PVR5,Rev 6 ,DRX890W,"DRX890W WiFi, 0.5W
+Change in manufacturing process.",Seagate Pipeline,500,,24/10/2013,Approved for production,,
+4F31B8,,Broadcom BCM7335_ BCM7335QKFSBA1G,PVR5,Rev 6 ,DRX890W,"DRX890W WiFi, 0.5W
+500k batch HWID increment",Seagate Pipeline,500,,13/05/2014,Approved for production,,
+,,,,,,,,,,,,,
+,"4F31BD 
+Last HWID 
+DRX890W
+Celestica",Broadcom BCM7335_ BCM7335QKFSBA1G,PVR5,Rev 6,DRX890W,Upper limit for current Celestica DRX890W HW ID range. With current software uses existing 245/245GB partitioning.,,,,19/12/2013,Placeholder,,
+,,,,,,,,,,,,,
+4F31BE,"DRX890W Lite
+4F31BE to 4F31CF",Broadcom BCM7335_ BCM7335QKFSBA1G,PVR5,Rev 6,DRX890WL,"DRX890W Lite
+As per 4F31B7 but with modem etc removed. See ECR1196.",Seagate Pipeline,500,,19/12/2013,Approved for production,,
+,,,,,,,,,,,,,
+,"4F31CF
+Last HWID 
+DRX890WL
+Celestica",Broadcom BCM7335_ BCM7335QKFSBA1G,PVR5,Rev 6,DRX890WL,Upper limit for current Celestica DRX890WL HW ID range. ,,,,19/12/2013,Placeholder,,
+,,,,,,,,,,,,,
+4F31D1,4F31D0 to 4F31FF Zinwell ,Broadcom BCM7335_ BCM7335QKFSBA1G,PVR5,Rev 5,DRX890,The same as 4F3101 but manufactured in Zinwell factory.,Seagate Pipeline,500,,13/05/2010,Approved for production,,
+4F31D2,,Broadcom BCM7335_ BCM7335QKFSBA1G,PVR5,Rev 5,DRX890,Darwin introduced as the factory software load,Seagate Pipeline,500,,02/08/2010,Approved for production,,
+4F31D3,,Broadcom BCM7335_ BCM7335QKFSBA1G,PVR5,Rev 5,DRX890,Hardware ID incremented to demark production quantity,Seagate Pipeline,500,,12/02/2011,Approved for production,,
+4F31D4,,Broadcom BCM7335_ BCM7335QKFSBA1G,PVR5,Rev 6,DRX890,Compliant for external ethernet cabling,Seagate Pipeline,500,,01/03/2011,Approved for production,,
+4F31D5,,Broadcom BCM7335_ BCM7335QKFSBA1G,PVR5,Rev 6,DRX890,"The same as 4F31D4, HW-ID incremented to demark production qty.",Seagate Pipeline,500,,01/09/2011,Approved for production,,
+4F31D6,,Broadcom BCM7335_ BCM7335QKFSBA1G,PVR5,Rev 6,DRX890,"The same as 4F31D5, HW-ID incremented to demark production qty.",Seagate Pipeline,500,,03/01/2012,Approved for production,,
+4F31E0,,Broadcom BCM7335_ BCM7335QKFSBA1G,PVR5,Rev 6 ,DRX890W,As per 4F31D6 but including integral WiFi,Seagate Pipeline,500,,26/11/2012,"Approved for production (Placeholder, production not expected at 26/11/12)",,
+,,,,,,,,,,,,,
+,"4F31E7
+Last HWID 
+DRX890W
+Zinwell",Broadcom BCM7335_ BCM7335QKFSBA1G,PVR5,Rev 6,DRX890W,Upper limit for current Zinwell DRX890W HW ID range. With current software uses existing 245/245GB partitioning.,,,,19/12/2013,Placeholder,,
+,,,,,,,,,,,,,
+4F31E8,"DRX890W Lite
+4F31E8 to 4F31FF",Broadcom BCM7335_ BCM7335QKFSBA1G,PVR5,Rev 6,DRX890WL,"DRX890W Lite
+As per 4F31E0 but with modem etc removed. See ECR1196.",Seagate Pipeline,500,,19/12/2013,Approved for sample production,,
+4F31E9,"DRX890W Lite
+4F31E8 to 4F31FF",Broadcom BCM7335_ BCM7335QKFSBA1G,PVR5,Rev 6,DRX890WL,"DRX890W Lite
+As per 4F31E8, but with change to Seagate HDD.See ECR1388.",Seagate Pipeline,500,,22/09/2014,Approved for production,,
+,,,,,,,,,,,,,
+,"4F31FF
+Last HWID 
+DRX890W
+Zinwell",Broadcom BCM7335_ BCM7335QKFSBA1G,PVR5,Rev 6,DRX890WL,Upper limit for current Zinwell DRX890WL HW ID range.,,,,19/12/2013,Placeholder,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+4F4001,N/A,Conexant Angelina,PVR5,,DRX380,First baseline SD SD dual decode developed by Amstrad,Seagate Nighthawk,,,,"Very few produced, not shipped",,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+4F3200,Not Used,TBA,PVR7,TBA,TBA,Reserved for future product,TBA,TBA,,22/03/2013,Software development,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+4F3300,Not Used,TBA,PVR7,TBA,TBA,Reserved for future product,TBA,TBA,,22/03/2013,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
