@@ -106,12 +106,9 @@ def FFT2(x):
     elif N <= 32:  # this cutoff should be optimized
         return DFT_slow(x)
     else:
-        X_even = FFT(x[::2])    # s[i:j:k] is slice of s from i to j with step k
-        X_odd = FFT(x[1::2])    # the odd-indexed elements
+        X_even = FFT(x[::2])
+        X_odd = FFT(x[1::2])
         factor = np.exp(-2j * np.pi * np.arange(N/2) / N)
-        # X_even and X_odd are Fourier transforms of length N/2, periodic in N/2
-        # hence X_even[N/2] = X_even[0],
-        #       X_even[N/2+1] = X_even[1], etc
         return np.concatenate([X_even + factor[:] * X_odd,
                                X_even - factor[:] * X_odd])
 
