@@ -1,0 +1,223 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://jsonschema.net",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "report": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "version": { "type": "string", "minLength": 0 },
+        "device": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "manufacturer": { "type": "string", "minLength": 0 },
+            "model":        { "type": "string", "minLength": 0 },
+            "guid":         { "type": "string", "minLength": 0 },
+            "software":     { "type": "string", "minLength": 0 }
+          },
+          "required": ["manufacturer", "model", "guid"]
+        },
+        "location": {
+          "oneOf": [
+            { "type": "null" },
+            { "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "longitude": { "type": "number" },
+                "latitude":  { "type": "number" }
+              },
+              "required": ["longitude", "latitude"]
+            }
+          ]
+        },
+        "STE": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "boottime": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "version": { "type": "string", "minLength": 0 },
+                "time":    { "type": "integer" },
+                "diagnostics": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "test": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                          "summary": {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "properties": {
+                              "id":          { "type": "string", "minLength": 0 },
+                              "name":        { "type": "string", "minLength": 0 },
+                              "description": { "type": "string", "minLength": 0 }
+                            },
+                            "required": ["id", "name"]
+                          },
+                          "time": {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "properties": {
+                              "realTime": {
+                                "type": "object",
+                                "additionalProperties": false,
+                                "properties": {
+                                  "startTime": { "type": "integer" },
+                                  "duration":  { "type": "integer", "minimum": 0 }
+                                }
+                              }
+                            },
+                            "required": ["realTime"]
+                          },
+                          "parameters": {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "properties": {
+                              "param": {
+                                "type": "array",
+                                "items": {
+                                  "type": "object",
+                                  "additionalProperties": false,
+                                  "properties": {
+                                    "name": { "type": "string", "minLength": 0 },
+                                    "value": {
+                                      "type": "object",
+                                      "additionalProperties": false,
+                                      "minProperties": 1,
+                                      "maxProperties": 1,
+                                      "properties": {
+                                        "String": { "type": "string", "minLength": 0 },
+                                        "Binary": { "type": "string", "minLength": 0 }
+                                      }
+                                    }
+                                  },
+                                  "required": ["name", "value"]
+                                }
+                              }
+                            },
+                            "required": ["param"]
+                          },
+                          "result": {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "properties": {
+                              "result": { "type": "string", "minLength": 0 },
+                              "returnData": {
+                                "type": "object",
+                                "additionalProperties": false,
+                                "properties": {
+                                  "data": {
+                                    "type": "array",
+                                    "items": {
+                                      "type": "object",
+                                      "additionalProperties": false,
+                                      "properties": {
+                                        "name": { "type": "string", "minLength": 0 },
+                                        "value": {
+                                          "type": "object",
+                                          "additionalProperties": false,
+                                          "minProperties": 1,
+                                          "maxProperties": 1,
+                                          "properties": {
+                                            "String": { "type": "string", "minLength": 0 },
+                                            "Binary": { "type": "string", "minLength": 0 }
+                                          }
+                                        }
+                                      },
+                                      "required": ["name", "value"]
+                                    }
+                                  }
+                                },
+                                "required": ["data"]
+                              }
+                            },
+                            "required": ["result", "returnData"]
+                          }
+                        },
+                        "required": ["summary", "time", "parameters", "result"]
+                      }
+                    }
+                  },
+                  "required": ["test"]
+                }
+              },
+              "required": ["version", "time", "diagnostics"]
+            }
+          },
+          "required": ["boottime"]
+        },
+        "manual": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "time": { "type": "integer" },
+            "actor": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "id":   { "type": "string", "minLength": 0 },
+                "type": { "type": "string", "minLength": 0 }
+              },
+              "required": ["id", "type"]
+            },
+            "weather": {
+              "type": "string",
+              "enum": ["clear", "partly cloudy", "overcast", "rain", "stormy", "snow"]
+            },
+            "survey": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "item": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "type":     { "type": "string", "enum": ["Pre", "Post"] },
+                      "question": { "type": "string", "minLength": 1 },
+                      "answer": {
+                        "oneOf": [
+                          { "type": "string", "minLength": 0 },
+                          { "type": "array",
+                            "items": { "type": "string", "minLength": 0 }
+                          }
+                        ]
+                      }
+                    },
+                    "required": ["type", "question", "answer"]
+                  }
+                }
+              },
+              "required": ["item"]
+            },
+            "comment": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "title": { "type": "string", "minLength": 1 },
+                  "value": { "type": ["string", "integer"] }
+                },
+                "required": ["title", "value"]
+              }
+            }
+          },
+          "required": ["time", "actor", "comment"]
+        }
+      },
+      "required": ["version", "device", "location", "STE", "manual"]
+    },
+    "required": ["report"]
+  }
+}

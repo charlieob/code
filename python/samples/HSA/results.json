@@ -1,0 +1,117 @@
+{
+  "report" : {
+    "version" : "1.0",
+    "device" : {
+      "manufacturer" : "Amstrad",
+      "model" : "DRX89X",
+      "guid" : "4F310C0375099128"
+    },
+    "location" : {
+      "longitude" : -6.19769680,
+      "latitude" : 53.2676273
+    },
+    "STE" : {
+      "boottime" : {
+        "version" : "0.1",
+        "time" : 1418834785,
+        "diagnostics" : {
+          "test" : [{
+              "summary" : {
+                "id" : "Led Spin Clear",
+                "name" : "LED_SPIN",
+                "description" : ""
+              },
+              "time" : {
+                "realTime" : {
+                  "startTime" : 1418834903,
+                  "duration" : 47
+                }
+              },
+              "parameters" : {
+                "param" : [{
+                    "name" : "Id",
+                    "value" : {
+                      "String" : "0"
+                    }
+                  }, {
+                    "name" : "Param",
+                    "value" : {
+                      "String" : "OFF"
+                    }
+                  }
+                ]
+              },
+              "result" : {
+                "result" : "Pass",
+                "returnData" : {
+                  "data" : [{
+                      "name" : "ResultValue",
+                      "value" : {
+                        "String" : "0"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "manual" : {
+      "time" : 1418835028,
+      "actor" : {
+        "id" : "ab123",
+        "type" : "Engineer"
+      },
+      "weather" : "partly cloudy",
+      "survey" : {
+        "item" : [{
+            "type" : "Post",
+            "question" : "Has the STB been damaged in any way?",
+            "answer" : "No"
+          }, {
+            "type" : "Post",
+            "question" : "Indicate any external interference to the satellite signal:",
+            "answer" : ["None", "Adverse weather (Including Snow),3rd Party NLS (Scaffolding, Building, Vehicle, etc.)"]
+          }
+        ]
+      },
+      "comment" : [{
+          "title" : "Connection Time",
+          "value" : 85
+        }, {
+          "title" : "Diagnostic Duration",
+          "value" : 81
+        }, {
+          "title" : "JobID",
+          "value" : "123456789"
+        }, {
+          "title" : "Total Duration",
+          "value" : 237
+        }, {
+          "title" : "Total Tests Passed",
+          "value" : 63
+        }, {
+          "title" : "Total Failed",
+          "value" : 2
+        }, {
+          "title" : "Total Tests Run",
+          "value" : 65
+        }, {
+          "title" : "Total Tests Unknown",
+          "value" : 0
+        }, {
+          "title" : "Diagnostic Duration",
+          "value" : 81
+        }, {
+          "title" : "Test Run Completed",
+          "value" : "Yes"
+        }, {
+          "title" : "ErrorString",
+          "value" : "No Smart Card Detected"
+        }
+      ]
+    }
+  }
+}

@@ -80,6 +80,7 @@ print "encryption/decryption was %s" % ("SUCCESSFUL" if cc == m else "UNSUCCESSF
 
 # DIGITAL SIGNATURE
 # sign the message with private key
+# m could in practice be the hash of an arbitrarily long text which is transmitted in the clear
 
 m = 9876543210
 print "\nm =", m

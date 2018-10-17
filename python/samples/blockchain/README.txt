@@ -19,3 +19,18 @@ difficulty = 5   up to 10 secs
 difficulty = 6   up to  2 mins
 difficulty = 7   up to 60 mins
 Note: variation in the mining times is very large
+
+
+
+keypair.py
+----------
+Can generate a public key from any private key here:
+https://anders.com/blockchain/public-private-keys/keys.html
+
+This page contains a description and python code for doing the same calculation:
+https://bitcoin.stackexchange.com/questions/25024/how-do-you-get-a-bitcoin-public-key-from-a-private-key
+
+This is using ECDSA (Elliptic Curve Digital Signature Algorithm) which is an alternative to RSA, and more efficient for signing.
+ECDSA is used in bitcoin.
+https://en.wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm
+
