@@ -1,0 +1,41 @@
+<script>
+
+/_ ES6 _/
+
+const allgood = true;
+
+const promise = new Promise(function(resolve, reject) {
+    console.log("Promise: at the start");
+    if (allgood) {
+        thing = {a: '1', b:'2'}
+        console.log("Promise: about to resolve");
+        resolve(thing);
+    }
+    else {
+        reason = new Error('this is the error reason');
+        console.log("Promise: about to reject");
+        reject(reason);
+    }
+    console.log("Promise: at the end");
+});
+
+function doSomething(item) {
+    const message = 'The answer was ' + item.a + ',' + item.b;
+//    return Promise.resolve(message);
+    console.log("doSomething(): about to return");
+    return message;
+};
+
+// call our promise
+console.log("starting");
+promise
+.then(doSomething)
+.then(function(message) {
+    console.log(message);
+})
+.catch(function(error) {
+    console.log(error.message);
+})
+console.log("at the end");
+
+</script>
