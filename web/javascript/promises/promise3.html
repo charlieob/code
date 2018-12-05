@@ -1,6 +1,6 @@
 <script>
 
-/_ ES6 _/
+/_ ES6 _/   // (I think JS interprets that as a regular expression)
 
 const allgood = true;
 
@@ -21,8 +21,8 @@ const promise = new Promise(function(resolve, reject) {
 
 function doSomething(item) {
     const message = 'The answer was ' + item.a + ',' + item.b;
-//    return Promise.resolve(message);
     console.log("doSomething(): about to return");
+//    return Promise.resolve(message);
     return message;
 };
 

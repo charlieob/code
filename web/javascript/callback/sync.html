@@ -1,0 +1,24 @@
+<script>
+
+function f1(s) {
+    console.log("f1(): start");
+    var s1 = s+s;
+    console.log("f1(): end");
+    return s1;
+}
+
+function f2(s, cb) {
+    console.log("f2(): start");
+    var s1 = s+cb(s);
+    console.log("f2(): end");
+    return s+s1;
+}
+
+console.log("starting");
+
+var myString = f2("abc", f1);
+console.log(myString);
+
+console.log("finishing");
+
+</script>

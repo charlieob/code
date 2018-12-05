@@ -1,0 +1,21 @@
+<script>
+
+function f1() {
+    console.log("f1(): start");
+    console.log("f1(): end");
+}
+
+function f2(cb) {
+    console.log("f2(): start");
+//    cb();
+    setTimeout(cb, 0);
+    console.log("f2(): end");
+}
+
+console.log("starting");
+
+setTimeout(f2, 0, f1);
+
+console.log("finishing");
+
+</script>
