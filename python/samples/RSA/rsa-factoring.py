@@ -1,4 +1,4 @@
-# https://www.johndcook.com/blog/2018/08/23/rsa-numbers-and-factoring/
+# https://www.johndcook.com/blog/2018/12/19/rsa-with-one-known-prime/
 # need Python 3 for secrets module
 # py -3 rsa-factoring.py
 
