@@ -1,3 +1,9 @@
+# https://docs.python.org/3/library/getopt.html
+# The getopt module is a parser for command line options whose API is designed to be familiar
+# to users of the C getopt() function. Users who are unfamiliar with the C getopt() function
+# or who would like to write less code and get better help and error messages should consider
+# using the argparse module instead.
+
 import getopt, sys
 
 def main():
