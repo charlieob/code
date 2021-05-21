@@ -63,14 +63,14 @@ class blockchain:
 myCoin = blockchain()
 myCoin.addBlock(block(1, "08/01/2018", {"amount": 4}))
 myCoin.addBlock(block(2, "08/01/2018", {"amount": 8}))
-print "blockchain valid? %s" % myCoin.isChainValid()
+print("blockchain valid? %s" % myCoin.isChainValid())
 
-print myCoin
+print(myCoin)
 
 myCoin.chain[1].data = {"amount": 100}
-print "blockchain valid? %s" % myCoin.isChainValid()
+printi("blockchain valid? %s" % myCoin.isChainValid())
 myCoin.chain[1].hash = myCoin.chain[1].calculateHash()
-print "blockchain valid? %s" % myCoin.isChainValid()
+print("blockchain valid? %s" % myCoin.isChainValid())
 
-print myCoin
+print(myCoin)
 # pprint.pprint(myCoin, indent=2, width= 20)
