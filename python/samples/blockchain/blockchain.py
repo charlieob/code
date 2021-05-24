@@ -27,7 +27,8 @@ class block:
         
     def calculateHash(self):
         h = sha256()
-        h.update(str(self.index) + self.previousHash + self.timestamp + str(self.data))
+        s = str(self.index) + self.previousHash + self.timestamp + str(self.data)
+        h.update(s.encode('utf-8'))
         return h.hexdigest()
         
 class blockchain:
@@ -68,7 +69,7 @@ print("blockchain valid? %s" % myCoin.isChainValid())
 print(myCoin)
 
 myCoin.chain[1].data = {"amount": 100}
-printi("blockchain valid? %s" % myCoin.isChainValid())
+print("blockchain valid? %s" % myCoin.isChainValid())
 myCoin.chain[1].hash = myCoin.chain[1].calculateHash()
 print("blockchain valid? %s" % myCoin.isChainValid())
 

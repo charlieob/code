@@ -9,7 +9,7 @@ class block:
         self.index = index
         self.timestamp = timestamp
         self.data = data
-        self.nonce = long(0)
+        self.nonce = int(0)
         self.previousHash = previousHash
         self.hash = self.calculateHash()
         
@@ -20,14 +20,15 @@ class block:
         
     def calculateHash(self):
         h = sha256()
-        h.update(str(self.index) + self.previousHash + self.timestamp + str(self.data) + str(self.nonce))
+        s = str(self.index) + self.previousHash + self.timestamp + str(self.data) + str(self.nonce)
+        h.update(s.encode('utf-8'))
         return h.hexdigest()
         
     def mineBlock(self, difficulty):
         while self.hash[0:difficulty] != '0' * difficulty:
             self.nonce += 1
             self.hash = self.calculateHash()
-        print "Block mined: %s" % self.hash
+        print("Block mined: %s" % self.hash)
 
 class blockchain:
     def __init__(self):
@@ -81,18 +82,18 @@ import datetime
 
 myCoin = blockchain()
 
-print "difficulty = %d" % DIFFICULTY
+print("difficulty = %d" % DIFFICULTY)
 
-print "Mining block 1..."
-start_time = time.clock()
+print("Mining block 1...")
+start_time = time.process_time()
 myCoin.addBlock(block(1, datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"), {"amount": 14}))
-elapsed = int(round(time.clock() - start_time))
-print "time taken = %d:%02d" % (elapsed/60, elapsed%60)
+elapsed = int(round(time.process_time() - start_time))
+print("time taken = %d:%02d" % (elapsed/60, elapsed%60))
 
-print "Mining block 2..."
-start_time = time.clock()
+print("Mining block 2...")
+start_time = time.process_time()
 myCoin.addBlock(block(2, datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"), {"amount": 28}))
-elapsed = int(round(time.clock() - start_time))
-print "time taken = %d:%02d" % (elapsed/60, elapsed%60)
+elapsed = int(round(time.process_time() - start_time))
+print("time taken = %d:%02d" % (elapsed/60, elapsed%60))
 
-print myCoin
+print(myCoin)
