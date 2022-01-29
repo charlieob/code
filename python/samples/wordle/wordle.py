@@ -6,7 +6,7 @@ with open("words.txt") as f:
         words.append(w.strip())
 print("There are {} words in the list.".format(len(words)))
 
-excluded = set('o')
+excluded = set("oxyz")
 patterns = ["p-r-y", "p--ry"]
 
 charset = set(string.ascii_lowercase).difference(excluded)
