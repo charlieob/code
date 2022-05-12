@@ -10,4 +10,4 @@ def fibonacci(max):
         a, b = b, a+b
 
 for n in fibonacci(5000):
-    print n,
+    print(n)
