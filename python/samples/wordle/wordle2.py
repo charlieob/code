@@ -29,12 +29,14 @@ def score_word(target, word):
         elif c2 == c1:
             s = GREEN
             count[ord(c2)-base] -= 1
-        elif count[ord(c2)-base] > 0:
-            s = YELLOW
-            count[ord(c2)-base] -= 1
         else:
             s = BLACK
         score.append(s)
+    for i in range(5):
+        c1, c2 = target[i], word[i]
+        if score[i] != GREEN and count[ord(c2)-base] > 0:
+            score[i] = YELLOW
+            count[ord(c2)-base] -= 1
     return score
 
 def main():
