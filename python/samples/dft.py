@@ -3,8 +3,8 @@
 import numpy as np
 
 # Euler's identity: e^(i*pi)+1=0
-print "e^(i*pi)+1 = ", np.exp(1j*np.pi)+1
-print "Euler's identity:", np.allclose(np.exp(1j*np.pi)+1, np.array(0.0))
+print("e^(i*pi)+1 = ", np.exp(1j*np.pi)+1)
+print("Euler's identity:", np.allclose(np.exp(1j*np.pi)+1, np.array(0.0)))
 
 def DFT_slow(x):
     """Compute the discrete Fourier Transform of the 1D array x"""
@@ -52,21 +52,21 @@ def IDFT_slow(x):
     return np.dot(M, x)/N                   # (2) scaling result by 1/N
 
 x = np.random.random(1024)
-print "DFT_slow vs numpy.fft:", np.allclose(DFT_slow(x), np.fft.fft(x))
+print("DFT_slow vs numpy.fft:", np.allclose(DFT_slow(x), np.fft.fft(x)))
 
-print "inverse FFT:", np.allclose(np.fft.ifft(np.fft.fft(x)), x)
-print "IDFT_slow:", np.allclose(IDFT_slow(DFT_slow(x)), x)
+print("inverse FFT:", np.allclose(np.fft.ifft(np.fft.fft(x)), x))
+print("IDFT_slow:", np.allclose(IDFT_slow(DFT_slow(x)), x))
 
 # reverse DFT using the forward DFT procedure
 dft = DFT_slow(x)
 dft[1:] = dft[:0:-1]    # to compute the reverse DFT first reverse all the inputs except index=0
-print "reverse DFT_slow:", np.allclose(DFT_slow(dft)/1024, x)
+print("reverse DFT_slow:", np.allclose(DFT_slow(dft)/1024, x))
 
 import time
 
-start_time = time.clock()
+start_time = time.perf_counter()
 for i in range(10): DFT_slow(x)
-print("DFT (10): " + str(time.clock() - start_time))
+print(("DFT (10): " + str(time.perf_counter() - start_time)))
 
 def FFT(x):
     """A recursive implementation of the 1D Cooley-Tukey FFT"""
@@ -84,14 +84,14 @@ def FFT(x):
         # X_even and X_odd are Fourier transforms of length N/2, periodic in N/2
         # hence X_even[N/2] = X_even[0],
         #       X_even[N/2+1] = X_even[1], etc
-        return np.concatenate([X_even + factor[:N / 2] * X_odd,
-                               X_even + factor[N / 2:] * X_odd])
+        return np.concatenate([X_even + factor[:N // 2] * X_odd,
+                               X_even + factor[N // 2:] * X_odd])
 
-print "FFT vs numpy.fft:", np.allclose(FFT(x), np.fft.fft(x))
+print("FFT vs numpy.fft:", np.allclose(FFT(x), np.fft.fft(x)))
 
-start_time = time.clock()
+start_time = time.perf_counter()
 for i in range(10): FFT(x)
-print("FFT (10): " + str(time.clock() - start_time))
+print(("FFT (10): " + str(time.perf_counter() - start_time)))
 
 def FFT2(x):
     """A recursive implementation of the 1D Cooley-Tukey FFT
@@ -112,11 +112,11 @@ def FFT2(x):
         return np.concatenate([X_even + factor[:] * X_odd,
                                X_even - factor[:] * X_odd])
 
-print "FFT2 vs numpy.fft:", np.allclose(FFT2(x), np.fft.fft(x))
+print("FFT2 vs numpy.fft:", np.allclose(FFT2(x), np.fft.fft(x)))
 
-start_time = time.clock()
+start_time = time.perf_counter()
 for i in range(10): FFT2(x)
-print("FFT2 (10): " + str(time.clock() - start_time))
+print(("FFT2 (10): " + str(time.perf_counter() - start_time)))
 
 def FFT_vectorized(x):
     """A vectorized, non-recursive version of the Cooley-Tukey FFT"""
@@ -140,8 +140,8 @@ def FFT_vectorized(x):
 
     # build-up each level of the recursive calculation all at once
     while X.shape[0] < N:
-        X_even = X[:, :X.shape[1] / 2]
-        X_odd = X[:, X.shape[1] / 2:]
+        X_even = X[:, :X.shape[1] // 2]
+        X_odd = X[:, X.shape[1] // 2:]
         factor = np.exp(-1j * np.pi * np.arange(X.shape[0])
                         / X.shape[0])[:, None]
         X = np.vstack([X_even + factor * X_odd,
@@ -149,19 +149,20 @@ def FFT_vectorized(x):
 
     return X.ravel()
 
-print "FFT_vectorized vs numpy.fft:", np.allclose(FFT_vectorized(x), np.fft.fft(x))
+print("FFT_vectorized vs numpy.fft:", np.allclose(FFT_vectorized(x), np.fft.fft(x)))
 
-start_time = time.clock()
+start_time = time.perf_counter()
 for i in range(10): FFT_vectorized(x)
-print("FFT_v (10): " + str(time.clock() - start_time))
+print(("FFT_v (10): " + str(time.perf_counter() - start_time)))
 
-x = np.random.random(1024 * 16)
-print "FFT_vectorized vs numpy.fft:", np.allclose(FFT_vectorized(x), np.fft.fft(x))
+# try it with a larger array
+x = np.random.random(1024 * 1024)
+print("FFT_vectorized vs numpy.fft:", np.allclose(FFT_vectorized(x), np.fft.fft(x)))
 
-start_time = time.clock()
+start_time = time.perf_counter()
 for i in range(10): np.fft.fft(x)
-print("np.fft (10): " + str(time.clock() - start_time))
+print(("np.fft (10): " + str(time.perf_counter() - start_time)))
 
-start_time = time.clock()
+start_time = time.perf_counter()
 for i in range(10): FFT_vectorized(x)
-print("FFT_v (10): " + str(time.clock() - start_time))
+print(("FFT_v (10): " + str(time.perf_counter() - start_time)))
